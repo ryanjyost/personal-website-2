@@ -2,20 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import MenuBottom from '../components/MenuBottom'
+import Menu from '../components/Menu'
 import Header from '../components/header'
 import './index.css'
 
 export default class Layout extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    }
   }
 
   updateDimensions() {
-    let update_width = window.innerWidth
-    let update_height = Math.round(update_width)
-    this.setState({ width: update_width, height: update_height })
+    let screenWidth = window.innerWidth
+    let screenHeight = window.innerHeight
+    // let update_height = Math.round(update_width)
+    this.setState({ width: screenWidth, height: screenHeight })
   }
 
   componentDidMount() {
@@ -31,10 +35,12 @@ export default class Layout extends React.Component {
   }
 
   render() {
-    const { children, data } = this.props
+    const { children, data, location } = this.props
     const { width, height } = this.state
-    const showSidebar = width > 600
-    console.log(data)
+    const showSidebar = width > 500
+    const isHome = location.pathname === '/'
+    console.log(this.props)
+
     const images = {
       redux: data.redux,
       ember: data.ember,
@@ -46,29 +52,12 @@ export default class Layout extends React.Component {
       babel: data.babel,
       meteor: data.meteor,
     }
-
-    const renderSidebar = () => {
-      return (
-        <div
-          style={{
-            width: '250px',
-            height: '100vh',
-            borderRight: '2px solid #d8d8d8',
-          }}
-        >
-          <Header
-            headshot={this.props.data.headshot}
-            showSidebar={showSidebar}
-          />
-        </div>
-      )
-    }
     return (
       <div
         style={{
           height: '100vh',
           overflow: 'hidden',
-          backgroundColor: '#fafafa',
+          backgroundColor: '#fefefe',
           margin: 'auto',
         }}
       >
@@ -92,23 +81,40 @@ export default class Layout extends React.Component {
           <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-            integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+            // integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
             crossorigin="anonymous"
           />
         </Helmet>
         <div>
-          {showSidebar ? (
-            renderSidebar()
-          ) : (
-            <Header headshot={this.props.data.headshot} />
-          )}
           <div
             style={
-              showSidebar
+              showSidebar && !isHome
+                ? {
+                    width: '250px',
+                    height: '100vh',
+                    borderRight: '2px solid #d8d8d8',
+                    zIndex: 400,
+                    overflow: 'hidden',
+                  }
+                : { width: '100%' }
+            }
+          >
+            <Header
+              headshot={this.props.data.headshot}
+              showSidebar={showSidebar}
+              isHome={isHome}
+              height={height}
+              width={width}
+              location={this.props.location}
+            />
+          </div>
+          <div
+            style={
+              showSidebar && !isHome
                 ? {
                     margin: '0 auto',
                     padding: '0px',
-                    backgroundColor: '#fafafa',
+                    backgroundColor: '#fefefe',
                     height: '100vh',
                     overflow: 'auto',
                     position: 'fixed',
@@ -117,13 +123,18 @@ export default class Layout extends React.Component {
                     width: 'auto',
                     paddingTop: 10,
                   }
-                : {
-                    margin: '0 auto',
-                    padding: '0px',
-                    backgroundColor: '#fafafa',
-                    height: '100vh',
-                    overflow: 'auto',
-                  }
+                : isHome
+                  ? {
+                      width: 0,
+                      height: 0,
+                    }
+                  : {
+                      margin: '0 auto',
+                      padding: '0px',
+                      backgroundColor: '#fafafa',
+                      height: '100vh',
+                      overflow: 'auto',
+                    }
             }
           >
             {children({
@@ -132,7 +143,11 @@ export default class Layout extends React.Component {
             })}
           </div>
           {showSidebar ? null : (
-            <MenuBottom headshot={this.props.data.headshot} />
+            <Menu
+              headshot={this.props.data.headshot}
+              isHome={isHome}
+              showSidebar={showSidebar}
+            />
           )}
         </div>
       </div>

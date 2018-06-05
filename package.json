@@ -11,9 +11,11 @@
     "gatsby-plugin-sharp": "^1.6.46",
     "gatsby-source-filesystem": "^1.5.38",
     "gatsby-transformer-sharp": "^1.6.26",
+    "react-animate-height": "^2.0.1",
     "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
-    "react-icons": "^2.2.7"
+    "react-icons": "^2.2.7",
+    "react-motion": "^0.5.2"
   },
   "keywords": [
     "gatsby"

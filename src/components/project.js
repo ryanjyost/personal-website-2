@@ -35,13 +35,16 @@ export default class Project extends React.Component {
           width: '100%',
           backgroundColor: '#fff',
           maxWidth: '350px',
-          margin: '20px 20px',
+          margin: '20px 25px',
           cursor: 'pointer',
         }}
         onMouseEnter={() => this.setState({ hover: true })}
         onMouseLeave={() => this.setState({ hover: false })}
       >
-        <a href={project.link} target="_blank">
+        <a
+          href={project.link}
+          // target="_blank"
+        >
           <Img
             sizes={project.preview}
             imgStyle={{
@@ -129,7 +132,7 @@ export default class Project extends React.Component {
         >
           <a
             href={project.github}
-            target="_blank"
+            // target="_blank"
             style={{
               backgroundColor: hoverGithub ? '#f2f2f2' : '#fcfcfc',
               border: '1px solid  #eee',
@@ -157,7 +160,7 @@ export default class Project extends React.Component {
           {npm ? (
             <a
               href={project.npm}
-              target="_blank"
+              // target="_blank"
               style={{
                 backgroundColor: hoverNPM ? '#f2f2f2' : '#fcfcfc',
                 border: '1px solid  #eee',
@@ -184,7 +187,7 @@ export default class Project extends React.Component {
           ) : null}
           <a
             href={project.link}
-            target="_blank"
+            // target="_blank"
             style={{
               backgroundColor: hoverLink ? '#f2f2f2' : '#fcfcfc',
               border: '1px solid  #eee',

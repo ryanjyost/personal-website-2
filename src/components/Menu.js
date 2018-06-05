@@ -1,23 +1,17 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 
-import ResumeIcon from 'react-icons/lib/ti/document-text'
-import WritingIcon from 'react-icons/lib/ti/pencil'
-import PortfolioIcon from 'react-icons/lib/ti/folder'
-import SkillIcon from 'react-icons/lib/ti/keyboard'
-import HomeIcon from 'react-icons/lib/ti/home'
-
 import FA from 'react-fontawesome'
 
 import Img from 'gatsby-image'
 
-export default class MenuButton extends Component {
+export default class Menu extends Component {
   constructor(props) {
     super(props)
   }
 
   render() {
-    const { headhsot } = this.props
+    const { headhsot, showSidebar, isHome } = this.props
     const inactiveButtonStyle = {
       flex: 0.2,
       textAlign: 'center',
@@ -32,13 +26,16 @@ export default class MenuButton extends Component {
       <div
         style={{
           background: '#111',
-          position: 'absolute',
+          position: showSidebar ? 'relative' : 'absolute',
           bottom: 0,
-          height: 50,
-          width: '100%',
+          height: 40,
+          width: showSidebar && isHome ? 350 : '100%',
           borderTop: '1px solid #f2f2f2',
           display: 'flex',
           alignItems: 'stretch',
+          zIndex: 200,
+          margin: '20px 0px 0px 0px',
+          borderRadius: showSidebar && isHome ? 5 : 0,
         }}
       >
         <div
@@ -57,7 +54,7 @@ export default class MenuButton extends Component {
               color: 'white',
             }}
           >
-            <i className="far fa-file" style={{ fontSize: 26 }} />
+            <i className="far fa-file-alt" style={{ fontSize: 20 }} />
           </Link>
           <Link
             to="/writing"
@@ -66,7 +63,7 @@ export default class MenuButton extends Component {
               color: 'white',
             }}
           >
-            <i className="fas fa-pencil-alt" style={{ fontSize: 26 }} />
+            <i className="fas fa-pencil-alt" style={{ fontSize: 20 }} />
           </Link>
 
           <Link
@@ -77,7 +74,7 @@ export default class MenuButton extends Component {
               color: 'white',
             }}
           >
-            <i className="fas fa-home" style={{ fontSize: 26 }} />
+            <i className="fas fa-home" style={{ fontSize: 20 }} />
           </Link>
           <Link
             to="/portfolio"
@@ -86,7 +83,7 @@ export default class MenuButton extends Component {
               color: 'white',
             }}
           >
-            <i className="far fa-folder-open" style={{ fontSize: 26 }} />
+            <i className="far fa-folder-open" style={{ fontSize: 20 }} />
           </Link>
           <Link
             to="/skills"
@@ -95,7 +92,7 @@ export default class MenuButton extends Component {
               color: 'white',
             }}
           >
-            <i className="fas fa-cog" style={{ fontSize: 26 }} />
+            <i className="fas fa-cog" style={{ fontSize: 20 }} />
           </Link>
         </div>
       </div>

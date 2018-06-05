@@ -5,7 +5,7 @@ import Project from '../components/project'
 
 class PortfolioPage extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, showSidebar } = this.props
     const projects = [
       {
         name: 'The Daily Gray',
@@ -117,7 +117,7 @@ class PortfolioPage extends React.Component {
           alignItems: 'center',
           padding: '10px 1% 80px 1%',
           justifyContent: 'center',
-          marginTop: 70,
+          marginTop: showSidebar ? 0 : 70,
           overflow: 'auto',
         }}
       >

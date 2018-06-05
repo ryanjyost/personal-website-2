@@ -134,11 +134,15 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-a:hover {
+a:hover, a:focus, a:active {
   text-decoration: none !important;
 }
 
 .project__link::hover {
   text-decoration: none !important;
   color: red
+}
+
+::-webkit-scrollbar {
+  display: none !important
 }
