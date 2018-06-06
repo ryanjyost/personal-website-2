@@ -16,8 +16,8 @@ export default class Layout extends React.Component {
   }
 
   updateDimensions() {
-    let screenWidth = window.innerWidth
-    let screenHeight = window.innerHeight
+    let screenWidth = typeof window !== 'undefined' && window.innerWidth
+    let screenHeight = typeof window !== 'undefined' && window.innerHeight
     // let update_height = Math.round(update_width)
     this.setState({ width: screenWidth, height: screenHeight })
   }

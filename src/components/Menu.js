@@ -19,82 +19,160 @@ export default class Menu extends Component {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      color: '#a4a4a4',
+      color: isHome && showSidebar ? '#555' : '#a4a4a4',
       textDecoration: 'none',
     }
     return (
       <div
         style={{
-          background: '#111',
+          background: isHome && showSidebar ? 'transparent' : '#111',
           position: showSidebar ? 'relative' : 'absolute',
           bottom: 0,
-          height: 40,
-          width: showSidebar && isHome ? 350 : '100%',
-          borderTop: '1px solid #f2f2f2',
           display: 'flex',
-          alignItems: 'stretch',
+          flexDirection: 'column',
+          width: showSidebar && isHome ? 350 : '100%',
+          borderTop: isHome ? 'none' : '1px solid #f2f2f2',
           zIndex: 200,
           margin: '20px 0px 0px 0px',
           borderRadius: showSidebar && isHome ? 5 : 0,
+          marginTop: 10,
         }}
       >
         <div
           style={{
-            margin: '0 auto',
-            width: '100%',
             display: 'flex',
-            alignItems: 'center',
-            position: 'relative',
+            alignItems: 'stretch',
+            height: 40,
           }}
         >
-          <Link
-            to="/resume"
-            style={inactiveButtonStyle}
-            activeStyle={{
-              color: 'white',
+          <div
+            style={{
+              margin: '0 auto',
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              position: 'relative',
             }}
+            className={isHome && showSidebar ? 'homeMenu' : 'bottomMenu'}
           >
-            <i className="far fa-file-alt" style={{ fontSize: 20 }} />
-          </Link>
-          <Link
-            to="/writing"
-            style={inactiveButtonStyle}
-            activeStyle={{
-              color: 'white',
-            }}
-          >
-            <i className="fas fa-pencil-alt" style={{ fontSize: 20 }} />
-          </Link>
+            <Link
+              to="/resume"
+              style={inactiveButtonStyle}
+              activeStyle={{
+                color: 'white',
+              }}
+            >
+              <i className="far fa-file-alt" style={{ fontSize: 20 }} />
+            </Link>
+            <Link
+              to="/writing"
+              style={inactiveButtonStyle}
+              activeStyle={{
+                color: 'white',
+              }}
+            >
+              <i className="fas fa-pencil-alt" style={{ fontSize: 20 }} />
+            </Link>
 
-          <Link
-            exact
-            to="/"
-            style={inactiveButtonStyle}
-            activeStyle={{
-              color: 'white',
-            }}
-          >
-            <i className="fas fa-home" style={{ fontSize: 20 }} />
-          </Link>
-          <Link
-            to="/portfolio"
-            style={inactiveButtonStyle}
-            activeStyle={{
-              color: 'white',
-            }}
-          >
-            <i className="far fa-folder-open" style={{ fontSize: 20 }} />
-          </Link>
-          <Link
-            to="/skills"
-            style={inactiveButtonStyle}
-            activeStyle={{
-              color: 'white',
-            }}
-          >
-            <i className="fas fa-cog" style={{ fontSize: 20 }} />
-          </Link>
+            <Link
+              exact
+              to="/"
+              style={inactiveButtonStyle}
+              activeStyle={{
+                color: 'white',
+              }}
+            >
+              {isHome && showSidebar ? null : (
+                <i className="fas fa-home" style={{ fontSize: 20 }} />
+              )}
+            </Link>
+            <Link
+              to="/portfolio"
+              style={inactiveButtonStyle}
+              activeStyle={{
+                color: 'white',
+              }}
+            >
+              <i className="far fa-folder-open" style={{ fontSize: 20 }} />
+            </Link>
+            <Link
+              to="/skills"
+              style={inactiveButtonStyle}
+              activeStyle={{
+                color: 'white',
+              }}
+            >
+              <i className="fas fa-cog" style={{ fontSize: 20 }} />
+            </Link>
+          </div>
         </div>
+        {isHome && showSidebar ? (
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div
+              style={{
+                flex: 0.2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                color: '#888',
+                fontSize: 10,
+              }}
+            >
+              Resume
+            </div>
+            <div
+              style={{
+                flex: 0.2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                color: '#888',
+                fontSize: 10,
+              }}
+            >
+              Articles
+            </div>
+            <div
+              style={{
+                flex: 0.2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                color: '#888',
+                fontSize: 10,
+              }}
+            />
+            <div
+              style={{
+                flex: 0.2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                color: '#888',
+                fontSize: 10,
+              }}
+            >
+              Projects
+            </div>
+            <div
+              style={{
+                flex: 0.2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                color: '#888',
+                fontSize: 10,
+              }}
+            >
+              Skills
+            </div>
+          </div>
+        ) : null}
       </div>
     )
   }

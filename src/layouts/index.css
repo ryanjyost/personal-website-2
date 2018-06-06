@@ -146,3 +146,11 @@ a:hover, a:focus, a:active {
 ::-webkit-scrollbar {
   display: none !important
 }
+
+.bottomMenu a:hover {
+  color: #fff !important;
+}
+
+.homeMenu a:hover {
+  color: #111 !important;
+}
