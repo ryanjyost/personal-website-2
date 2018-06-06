@@ -54,8 +54,8 @@ export default class Header extends React.Component {
       <Motion
         defaultStyle={{
           opacity: 0,
-          height: window.innerHeight,
-          width: window.innerWidth,
+          height: 0,
+          width: 0,
           imgSize: 80,
         }}
         style={{
