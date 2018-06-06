@@ -10,14 +10,14 @@ export default class Layout extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      width: window.innerWidth,
-      height: window.innerHeight,
+      width: typeof window !== 'undefined' ? window.innerWidth : 0,
+      height: typeof window !== 'undefined' ? window.innerHeight : 0,
     }
   }
 
   updateDimensions() {
-    let screenWidth = typeof window !== 'undefined' && window.innerWidth
-    let screenHeight = typeof window !== 'undefined' && window.innerHeight
+    let screenWidth = typeof window !== 'undefined' ? window.innerWidth : 0
+    let screenHeight = typeof window !== 'undefined' ? window.innerHeight : 0
     // let update_height = Math.round(update_width)
     this.setState({ width: screenWidth, height: screenHeight })
   }
