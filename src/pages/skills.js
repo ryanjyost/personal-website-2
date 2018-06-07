@@ -193,13 +193,13 @@ export default class SkillsPage extends React.Component {
           style={{
             opacity: spring(
               this.props.location.pathname === '/skills' ? 1 : 0,
-              { ...presets.noWobble, ...{ precision: 0.9 } }
+              { ...presets.stiff, ...{ precision: 0.9 } }
             ),
             height: spring(
               this.props.location.pathname === '/skills' ? 60 : 0,
               {
-                ...presets.wobbly,
-                ...{ precision: 0.1 },
+                ...presets.stiff,
+                ...{ precision: 0.9 },
               }
             ),
           }}

@@ -65,7 +65,7 @@ export default class Menu extends Component {
               <i className="far fa-file-alt" style={{ fontSize: 20 }} />
             </Link>
             <Link
-              to="/writing"
+              to="/articles"
               style={inactiveButtonStyle}
               activeStyle={{
                 color: 'white',

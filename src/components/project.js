@@ -187,7 +187,7 @@ export default class Project extends React.Component {
           ) : null}
           <a
             href={project.link}
-            // target="_blank"
+            target="_blank"
             style={{
               backgroundColor: hoverLink ? '#f2f2f2' : '#fcfcfc',
               border: '1px solid  #eee',

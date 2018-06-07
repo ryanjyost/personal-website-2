@@ -2,6 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import Project from '../components/project'
+import { Motion, spring, presets } from 'react-motion'
 
 class PortfolioPage extends React.Component {
   render() {
@@ -110,21 +111,47 @@ class PortfolioPage extends React.Component {
     ]
 
     return (
-      <div
+      <Motion
+        defaultStyle={{
+          top: -800,
+          height: 0,
+        }}
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center',
-          padding: '10px 1% 80px 1%',
-          justifyContent: 'center',
-          marginTop: showSidebar ? 0 : 70,
-          overflow: 'auto',
+          top: spring(
+            this.props.location.pathname === '/portfolio'
+              ? showSidebar
+                ? 0
+                : 70
+              : -800,
+            { ...presets.stiff, ...{ precision: 0.9 } }
+          ),
+          // height: spring(
+          //   this.props.location.pathname === '/portfolio' ? 300 : 0,
+          //   {
+          //     ...presets.stiff,
+          //     ...{ precision: 0.9 },
+          //   }
+          // ),
         }}
       >
-        {projects.map((project, i) => (
-          <Project key={i} i={i} project={project} />
-        ))}
-      </div>
+        {style => (
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              padding: '10px 1% 80px 1%',
+              justifyContent: 'center',
+              overflow: 'auto',
+              marginTop: style.top,
+            }}
+          >
+            {projects.map((project, i) => (
+              <Project key={i} i={i} project={project} />
+            ))}
+          </div>
+        )}
+      </Motion>
     )
   }
 }
