@@ -132,8 +132,8 @@ export default class Layout extends React.Component {
                                 margin: '0 auto',
                                 padding: '0px',
                                 backgroundColor: '#fafafa',
-                                // height: '100vh',
-                                // overflow: 'auto',
+                                height: '100vh',
+                                overflow: 'auto',
                              }
                   }
                >
