@@ -99,6 +99,8 @@ export default class SkillsPage extends React.Component {
         isFile: false,
         factor: 1.5,
       },
+
+
       {
         name: 'ES6 / ES7',
         icon: 'fab fa-js-square',
@@ -271,6 +273,7 @@ export default class SkillsPage extends React.Component {
           return (
             <div key={i} style={{ marginRight: 10, marginBottom: 10 }}>
               {renderSkill(skill)}
+              SECTIONS, skill factor
             </div>
           )
         })}
