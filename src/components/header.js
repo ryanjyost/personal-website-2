@@ -2,15 +2,23 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
 import { Motion, spring, presets } from 'react-motion';
-import AnimateHeight from 'react-animate-height';
-import Menu from './Menu';
 
 export default class Header extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
          didMount: false,
+         currentMessage: `Hi, I'm Ryan. I'm a web developer`,
+         isFirstPath: true,
+         visitedPortfolio: false,
+         visitedSkills: false,
+         visitedResume: false,
+         transitioning: false,
       };
+
+      this.transition = null;
+      this.timeout1 = null;
+      this.portfolio2 = null;
    }
 
    componentDidMount() {
@@ -18,14 +26,147 @@ export default class Header extends React.Component {
          function() {
             this.setState({ didMount: true });
          }.bind(this),
-         2000
+         500
       );
+   }
+
+   transitionMessage(message) {
+      clearTimeout(this.transition);
+      this.setState({ transitioning: true });
+
+      this.transition = setTimeout(
+         function() {
+            this.setState({
+               currentMessage: message,
+               transitioning: false,
+            });
+         }.bind(this),
+         500
+      );
+   }
+
+   portfolioMessage() {
+      if (this.state.visitedPortfolio) {
+         this.transitionMessage(`Explore my portfolio of apps and projects.`);
+      } else {
+         this.transitionMessage(
+            `I'm always working on fun, challenging side projects.`
+         );
+
+         this.timeout1 = setTimeout(
+            function() {
+               this.transitionMessage(
+                  `Here are some of the things I've built.`
+               );
+            }.bind(this),
+            3000
+         );
+      }
+   }
+
+   skillsMessage() {
+      if (this.state.visitedSkills) {
+         this.transitionMessage(
+            `Check out my growing arsenal of skills, tools and experience.`
+         );
+      } else {
+         this.transitionMessage(
+            `Before building awesome things, you gotta learn how to build them.`
+         );
+
+         this.timeout1 = setTimeout(
+            function() {
+               this.transitionMessage(
+                  `These are some of the tools I've used to bring my and other's ideas to life.`
+               );
+            }.bind(this),
+            4000
+         );
+      }
+   }
+
+   articlesMessage() {
+      if (this.state.visitedArticles) {
+         this.transitionMessage(
+            `I've published a handful of tutorials on Hacker Noon and my own blog.`
+         );
+      } else {
+         this.transitionMessage(
+            `As a self-taught developer, I've benefited from tons of free material.`
+         );
+
+         this.timeout1 = setTimeout(
+            function() {
+               this.transitionMessage(
+                  `So I create my own content whenever I think it can help the community.`
+               );
+            }.bind(this),
+            4000
+         );
+      }
+   }
+
+   resumeMessage() {
+      if (this.state.visitedResume) {
+         this.transitionMessage(`Scroll down to see where I've been.`);
+      } else {
+         this.transitionMessage(
+            `I learned how to program while working in finance.`
+         );
+
+         this.timeout1 = setTimeout(
+            function() {
+               this.transitionMessage(
+                  `Now I'm a professional front end developer - and loving every minute of it. `
+               );
+            }.bind(this),
+            4000
+         );
+      }
+   }
+
+   componentWillReceiveProps(nextProps) {
+      const path = nextProps.location.pathname;
+
+      if (this.props.location.pathname !== path || this.state.isFirstPath) {
+         clearTimeout(this.timeout1);
+         this.timeout1 = null;
+         clearTimeout(this.transition);
+         this.transition = null;
+
+         switch (path) {
+            case '/portfolio':
+               this.setState({ visitedPortfolio: true });
+               this.portfolioMessage();
+               break;
+            case '/skills':
+               this.setState({ visitedSkills: true });
+               this.skillsMessage();
+               break;
+            case '/articles':
+               this.setState({ visitedArticles: true });
+               this.articlesMessage();
+               break;
+            case '/resume':
+               this.setState({ visitedResume: true });
+               this.resumeMessage();
+               break;
+            case '/':
+               this.setState({ currentMessage: '' });
+               break;
+            default:
+               break;
+         }
+      }
+
+      this.setState({ isFirstPath: false });
    }
 
    render() {
       const {
          headshot,
          showSidebar,
+         showSidebarWide,
          isHome,
          height,
          width,
@@ -33,113 +174,128 @@ export default class Header extends React.Component {
       } = this.props;
       const { didMount } = this.state;
       const currentPath = location.pathname;
+      console.log(
+         showSidebar,
+         showSidebarWide,
+         this.state.currentMessage.length
+      );
 
-      const renderMessage = () => {
-         if (currentPath === '/') {
-            return (
-               <span style={{ fontSize: showSidebar ? 18 : 14, color: '#555' }}>
-                  Hi, I'm Ryan. I'm a web developer.
-               </span>
-            );
-         } else {
-            return (
-               <span style={{ fontSize: showSidebar ? 18 : 14, color: '#555' }}>
-                  Hi, I'm Ryan. I'm a web developer.
-               </span>
-            );
-         }
+      const renderHome = () => {
+         return <div>Seamlessly responsive web design</div>;
       };
 
       return (
          <Motion
             defaultStyle={{
                opacity: 0,
-
                height: 0,
                width: 0,
                imgSize: 80,
+               message: 1,
             }}
             style={{
                opacity: spring(didMount ? 1 : 0),
-               height: spring(isHome ? height : showSidebar ? 200 : 60, {
+               message: spring(this.state.transitioning ? 0 : 1),
+               height: spring(isHome ? height : showSidebar ? 60 : 60, {
                   ...presets.stiff,
                   ...{ precision: 0.9 },
                }),
-               width: spring(showSidebar && !isHome ? 100 : width),
-               imgSize: spring(isHome ? 80 : showSidebar ? 60 : 45, {
+               width: spring(showSidebar && !isHome ? width : width),
+               imgSize: spring(isHome ? 80 : showSidebar ? 50 : 50, {
                   ...presets.stiff,
                   ...{ precision: 0.1 },
                }),
             }}
          >
             {style => (
-               <div
-                  style={{
-                     height: style.height,
-                     width: style.width,
-                     display: 'flex',
-                     padding: showSidebar
-                        ? '20px 15px 20px 15px'
-                        : '10px 15px 10px 15px',
-                     alignItems: 'center',
-                     justifyContent: 'center',
-                     backgroundColor: showSidebar ? 'rgb(17, 17, 17)' : '#fff',
-                     overflowWrap: 'break-word',
-                     position: showSidebar ? 'relative' : 'fixed',
-                     zIndex: 100,
-
-                     // flexDirection: showSidebar || isHome ? 'column' : 'row',
-                     flexDirection: 'row',
-                     WebkitBoxShadow: !showSidebar
-                        ? '1px 7px 13px -11px rgba(136,136,136,1)'
-                        : 'none',
-                  }}
-               >
-                  <Img
-                     title="Headshot"
-                     alt="Ryan Yost Headshot"
-                     sizes={headshot.sizes}
-                     style={{
-                        height: style.imgSize,
-                        width: style.imgSize,
-                        borderRadius: '9999px',
-                        border: '2px solid #f2f2f2',
-                        marginRight: showSidebar ? 0 : 10,
-                        opacity: style.opacity,
-                     }}
-                  />
+               <div style={{ position: 'fixed', zIndex: 1000 }}>
                   <div
                      style={{
-                        // backgroundColor: '#f1f1f1',
-                        height: 30,
-                        opacity: style.opacity,
+                        height: style.height,
+                        width: width,
                         display: 'flex',
-                        alignItems: 'center',
-                        flexDirection: 'column',
+                        padding: showSidebar
+                           ? '20px 15px 20px 25px'
+                           : '10px 15px 10px 15px',
+                        alignItems: showSidebar ? 'flex-start' : 'center',
                         justifyContent: 'center',
-                        padding: '12px',
-                        borderRadius: '8px',
-                        marginTop: showSidebar ? 10 : 0,
-                        //border: '1px solid #f2f2f2',
-                        // WebkitBoxShadow: '1px 7px 13px -11px rgba(136,136,136,1)',
-                        wordWrap: 'break-word',
+                        backgroundColor: '#fff',
                         overflowWrap: 'break-word',
-                        lineHeight: 1.2,
-                        position: showSidebar ? 'absolute' : 'relative',
-                        textAlign: showSidebar ? 'center' : 'left',
-                        // maxWidth: 400,
+                        //position: 'fixed',
+                        marginTop: 0,
+                        zIndex: 100,
+                        flexDirection: isHome || showSidebar ? 'column' : 'row',
+                        WebkitBoxShadow:
+                           '1px 7px 13px -11px rgba(136,136,136,1)',
                      }}
                   >
-                     {renderMessage()}
+                     {isHome ? (
+                        renderHome()
+                     ) : (
+                        <div
+                           style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              maxWidth: 1000,
+                              width: '100%',
+                              backgroundColor: '#fff',
+                              overflowWrap: 'break-word',
+                              height: style.height,
+                           }}
+                        >
+                           <Img
+                              title="Headshot"
+                              alt="Ryan Yost Headshot"
+                              sizes={headshot.sizes}
+                              style={{
+                                 height: style.imgSize,
+                                 width: style.imgSize,
+                                 borderRadius: '9999px',
+                                 border: '2px solid #f2f2f2',
+                                 marginRight: showSidebar ? 0 : 10,
+                                 opacity: style.opacity,
+                              }}
+                           />
+                           <div
+                              className={'message'}
+                              style={{
+                                 // backgroundColor: '#f1f1f1',
+                                 height: 30,
+                                 opacity: style.opacity,
+                                 display: 'flex',
+                                 alignItems: 'center',
+                                 flexDirection: 'column',
+                                 justifyContent: 'center',
+                                 padding: '12px',
+                                 borderRadius: '8px',
+                                 //border: '1px solid #f2f2f2',
+                                 // WebkitBoxShadow: '1px 7px 13px -11px rgba(136,136,136,1)',
+                                 wordWrap: 'break-word',
+                                 overflowWrap: 'break-word',
+                                 lineHeight: 1.2,
+                                 position: 'relative',
+                                 textAlign: 'left',
+                                 // maxWidth: 400,
+                              }}
+                           >
+                              <span
+                                 style={{
+                                    fontSize:
+                                       this.state.currentMessage.length > 70 &&
+                                       !showSidebar
+                                          ? 14
+                                          : 16,
+                                    color: '#555',
+                                    opacity: style.message,
+                                    lineHeight: 1.3,
+                                 }}
+                              >
+                                 {this.state.currentMessage}
+                              </span>
+                           </div>
+                        </div>
+                     )}
                   </div>
-
-                  {showSidebar && isHome ? (
-                     <Menu
-                        headshot={headshot}
-                        showSidebar={showSidebar}
-                        isHome={isHome}
-                     />
-                  ) : null}
                </div>
             )}
          </Motion>

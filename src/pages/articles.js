@@ -6,7 +6,7 @@ import { Motion, spring, presets } from 'react-motion';
 
 class ArticlePage extends React.Component {
    render() {
-      const { data, showSidebar } = this.props;
+      const { data, showSidebar, width } = this.props;
       const articles = [
          {
             name: 'Redux-Saga tutorial for beginners and dog lovers',
@@ -49,11 +49,7 @@ class ArticlePage extends React.Component {
             }}
             style={{
                top: spring(
-                  this.props.location.pathname === '/articles'
-                     ? showSidebar
-                        ? 0
-                        : 70
-                     : -800,
+                  this.props.location.pathname === '/articles' ? 70 : -800,
                   { ...presets.stiff, ...{ precision: 0.9 } }
                ),
             }}
@@ -63,15 +59,15 @@ class ArticlePage extends React.Component {
                   style={{
                      display: 'flex',
                      flexWrap: 'wrap',
-                     alignItems: 'center',
-                     padding: '10px 1% 80px 1%',
+                     alignItems: 'stretch',
+                     padding: '10px 10px 80px 10px',
                      justifyContent: 'center',
                      overflow: 'auto',
                      marginTop: style.top,
                   }}
                >
                   {articles.map((article, i) => (
-                     <Article key={i} i={i} article={article} />
+                     <Article key={i} i={i} article={article} width={width} />
                   ))}
                </div>
             )}

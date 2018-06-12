@@ -1,7 +1,16 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+exports.onRouteUpdate = args => {
+   if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const div = document.querySelector('#content');
+      if (div) {
+         div.scrollTop = 0;
+      }
+   }
+};
 
- // You can delete this file if you're not using it
+// exports.shouldUpdateScroll = args => {
+//    //  scroll on < back, forward >, refresh, but not link clicks
+//    return args.prevRouterProps == null ||
+//       (args.prevRouterProps && args.prevRouterProps.history.action == 'POP')
+//       ? true
+//       : false;
+// };

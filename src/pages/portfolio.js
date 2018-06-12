@@ -59,12 +59,13 @@ class PortfolioPage extends React.Component {
             npm: 'https://www.npmjs.com/package/react-simple-storage',
          },
          {
-            name: 'Jotlot',
-            desc: 'A site for learning and playing around with DOM events',
-            preview: data.domEvents.sizes,
-            skills: ['JavaScript', 'LocalStorage', 'Bootstrap'],
-            github: 'https://github.com/ryanjyost/dom-events',
-            link: 'http://domevents.info/',
+            name: '100DaysOfJournaling',
+            desc:
+               'Develop a journaling habit and join a community of anonymous journalers.',
+            preview: data.jotlot.sizes,
+            skills: ['Meteor.js', 'React', 'MongoDB'],
+            github: 'https://github.com/ryanjyost/100DaysOfJournaling',
+            // link: 'https://github.com/ryanjyost/100DaysOfJournaling',
          },
          {
             name: 'DOM Events Playground',
@@ -82,6 +83,14 @@ class PortfolioPage extends React.Component {
             skills: ['JavaScript', 'Google API', 'The Daily Gray API'],
             github: 'https://github.com/ryanjyost/stellar-account-dashboard',
             link: 'https://stellar-account-data.herokuapp.com/',
+         },
+         {
+            name: 'Personal Website 1.0',
+            desc: 'My first personal portfolio website.',
+            preview: data.personal1.sizes,
+            skills: ['Node.js', 'ejs'],
+            github: 'https://github.com/ryanjyost/personal-website-v1',
+            link: 'https://ryanjyost.herokuapp.com/',
          },
          {
             name: 'Stellar Account Dashboard',
@@ -118,11 +127,7 @@ class PortfolioPage extends React.Component {
             }}
             style={{
                top: spring(
-                  this.props.location.pathname === '/portfolio'
-                     ? showSidebar
-                        ? 0
-                        : 70
-                     : -800,
+                  this.props.location.pathname === '/portfolio' ? 70 : -800,
                   { ...presets.stiff, ...{ precision: 0.9 } }
                ),
                // height: spring(
@@ -140,8 +145,8 @@ class PortfolioPage extends React.Component {
                      display: 'flex',
                      flexWrap: 'wrap',
                      alignItems: 'stretch',
-                     padding: '10px 0% 80px 0%',
-                     justifyContent: 'center',
+                     padding: '10px 10px 80px 30px',
+                     // justifyContent: 'center',
                      overflow: 'auto',
                      marginTop: style.top,
                   }}
@@ -196,7 +201,17 @@ export const query = graphql`
             ...GatsbyImageSharpSizes
          }
       }
+      jotlot: imageSharp(id: { regex: "/jotlot-preview/" }) {
+         sizes(maxWidth: 630) {
+            ...GatsbyImageSharpSizes
+         }
+      }
       simpleStorage: imageSharp(id: { regex: "/simple-storage-preview/" }) {
+         sizes(maxWidth: 630) {
+            ...GatsbyImageSharpSizes
+         }
+      }
+      personal1: imageSharp(id: { regex: "/personal1-preview/" }) {
          sizes(maxWidth: 630) {
             ...GatsbyImageSharpSizes
          }
