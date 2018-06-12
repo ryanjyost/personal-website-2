@@ -16,6 +16,7 @@ export default class Menu extends Component {
 
       const activeStyle = {
          color: 'white',
+         borderTop: '3px solid #43B2AA',
       };
       const inactiveButtonStyle = {
          flex: 0.2,
@@ -26,8 +27,9 @@ export default class Menu extends Component {
          alignItems: 'center',
          color: '#a4a4a4',
          textDecoration: 'none',
-         borderTop: showMenuText ? '3px solid #333746' : 'none',
-         paddingBottom: showMenuText ? 3 : 0,
+         borderTop: '3px solid #333746',
+         paddingBottom: 3,
+         height: '100%',
       };
       return (
          <div
@@ -78,7 +80,7 @@ export default class Menu extends Component {
                      {showMenuText ? 'Experience' : null}
                   </Link>
                   <Link
-                     to="/articles"
+                     to="/writing"
                      style={inactiveButtonStyle}
                      activeStyle={activeStyle}
                   >
@@ -86,7 +88,7 @@ export default class Menu extends Component {
                         className="fas fa-pencil-alt"
                         style={{ fontSize: 20, marginRight: 8 }}
                      />
-                     {showMenuText ? 'Articles' : null}
+                     {showMenuText ? 'Writing' : null}
                   </Link>
 
                   <Link

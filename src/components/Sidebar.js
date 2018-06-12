@@ -20,15 +20,17 @@ export default class Sidebar extends Component {
          color: 'white',
          backgroundColor: '#43B2AA',
          fontWeight: '400',
-         borderBottomRightRadius: showSidebarWide ? 50 : 0,
-         borderTopRightRadius: showSidebarWide ? 50 : 0,
-         width: showSidebarWide ? '105%' : '100%',
+         borderBottomRightRadius: showSidebarWide ? 50 : 50,
+         borderTopRightRadius: showSidebarWide ? 50 : 50,
+         width: showSidebarWide ? '105%' : '125%',
       };
       const inactiveButtonStyle = {
-         padding: showSidebarWide ? '10px 20px 10px 30px' : '10px 0px',
+         padding: showSidebarWide ? '12px 20px 12px 30px' : '10px 0px',
+         margin: showSidebarWide ? '0px' : '5px 0px',
          color: '#a4a4a4',
          width: '100%',
          fontWeight: '100',
+         textAlign: showSidebar && !showSidebarWide ? 'center' : 'left',
       };
       return (
          <div
@@ -38,14 +40,59 @@ export default class Sidebar extends Component {
                height: '100vh',
                width: sidebarWidth,
                zIndex: 1100,
+               display: 'flex',
+               flexDirection: 'column',
             }}
          >
+            {showSidebarWide ? (
+               <div style={{ padding: '20px 0px 0px 20px' }}>
+                  <div
+                     style={{
+                        width: '100%',
+                        color: '#f2f2f2',
+                        fontSize: 24,
+                        letterSpacing: '0.03em',
+                     }}
+                  >
+                     Ryan J Yost
+                  </div>
+                  <div
+                     style={{
+                        width: '100%',
+                        color: '#d1d1d1',
+                        fontSize: 12,
+                        fontWeight: '400',
+                        padding: '0px 10px 0px 3px',
+                        letterSpacing: '0.03em',
+                     }}
+                  >
+                     Front End Web Developer
+                  </div>
+               </div>
+            ) : (
+               <div
+                  style={{
+                     width: '100%',
+                     color: '#f2f2f2',
+                     fontSize: 24,
+                     letterSpacing: '0.03em',
+                     flexDirection: 'column',
+                     padding: '20px 12px 0px 12px',
+                     lineHeight: 0.7,
+                  }}
+               >
+                  <div style={{ width: '100%' }}>R</div>
+                  <div style={{ width: '100%', textAlign: 'center' }}>J</div>
+                  <div style={{ width: '100%', textAlign: 'right' }}>Y</div>
+               </div>
+            )}
+
             <div
                style={{
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: showSidebarWide ? 'flex-start' : 'center',
-                  paddingTop: 100,
+                  paddingTop: 50,
                }}
                className={'bottomMenu'}
             >
@@ -84,7 +131,7 @@ export default class Sidebar extends Component {
                   {showSidebarWide ? 'Skills' : null}
                </Link>
                <Link
-                  to="/articles"
+                  to="/writing"
                   style={inactiveButtonStyle}
                   activeStyle={activeStyle}
                >
@@ -92,7 +139,7 @@ export default class Sidebar extends Component {
                      className="fas fa-pencil-alt"
                      style={{ fontSize: 20, marginRight: 8 }}
                   />
-                  {showSidebarWide ? 'Articles' : null}
+                  {showSidebarWide ? 'Writing' : null}
                </Link>
                <Link
                   to="/resume"

@@ -4,7 +4,7 @@ import Link from 'gatsby-link';
 import Article from '../components/Article';
 import { Motion, spring, presets } from 'react-motion';
 
-class ArticlePage extends React.Component {
+class WritingPage extends React.Component {
    render() {
       const { data, showSidebar, width } = this.props;
       const articles = [
@@ -49,7 +49,7 @@ class ArticlePage extends React.Component {
             }}
             style={{
                top: spring(
-                  this.props.location.pathname === '/articles' ? 70 : -800,
+                  this.props.location.pathname === '/writing' ? 70 : -800,
                   { ...presets.stiff, ...{ precision: 0.9 } }
                ),
             }}
@@ -76,7 +76,7 @@ class ArticlePage extends React.Component {
    }
 }
 
-export default ArticlePage;
+export default WritingPage;
 
 export const query = graphql`
    query ArticleQuery {

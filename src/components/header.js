@@ -71,13 +71,13 @@ export default class Header extends React.Component {
          );
       } else {
          this.transitionMessage(
-            `Before building awesome things, you gotta learn how to build them.`
+            `Building awesome things requires the right skills and experience for the job.`
          );
 
          this.timeout1 = setTimeout(
             function() {
                this.transitionMessage(
-                  `These are some of the tools I've used to bring my and other's ideas to life.`
+                  `These are some of the tools I use to bring my and other's ideas to life.`
                );
             }.bind(this),
             4000
@@ -111,13 +111,13 @@ export default class Header extends React.Component {
          this.transitionMessage(`Scroll down to see where I've been.`);
       } else {
          this.transitionMessage(
-            `I learned how to program while working in finance.`
+            `I initially learned how to program in my spare time while working in finance.`
          );
 
          this.timeout1 = setTimeout(
             function() {
                this.transitionMessage(
-                  `Now I'm a professional front end developer - and loving every minute of it. `
+                  `Now I'm a professional developer - and loving every minute of it. `
                );
             }.bind(this),
             4000
@@ -143,7 +143,7 @@ export default class Header extends React.Component {
                this.setState({ visitedSkills: true });
                this.skillsMessage();
                break;
-            case '/articles':
+            case '/writing':
                this.setState({ visitedArticles: true });
                this.articlesMessage();
                break;
@@ -181,7 +181,12 @@ export default class Header extends React.Component {
       );
 
       const renderHome = () => {
-         return <div>Seamlessly responsive web design</div>;
+         return (
+            <div>
+               Seamlessly responsive web design <br /> pulsating arrows to next
+               section, contact icons in sidebar
+            </div>
+         );
       };
 
       return (

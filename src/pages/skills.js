@@ -288,14 +288,14 @@ export default class SkillsPage extends React.Component {
             style={{
                padding: '30px 5% 80px 5%',
                justifyContent: 'center',
-               marginTop: showSidebar ? 0 : 70,
+               marginTop: showSidebar ? 70 : 70,
             }}
          >
             <h6
                style={{
                   width: '100%',
                   fontWeight: '100',
-                  color: '#d1d1d1',
+                  color: '#ccc',
                   //borderBottom: '1px solid #f2f2f2',
                   paddingBottom: 5,
                }}
@@ -330,7 +330,7 @@ export default class SkillsPage extends React.Component {
                style={{
                   width: '100%',
                   fontWeight: '100',
-                  color: '#d1d1d1',
+                  color: '#ccc',
                   //borderBottom: '1px solid #f2f2f2',
                   paddingBottom: 5,
                }}
@@ -366,7 +366,7 @@ export default class SkillsPage extends React.Component {
                style={{
                   width: '100%',
                   fontWeight: '100',
-                  color: '#d1d1d1',
+                  color: '#ccc',
                   //borderBottom: '1px solid #f2f2f2',
                   paddingBottom: 5,
                }}

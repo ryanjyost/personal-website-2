@@ -107,6 +107,7 @@ section {
 }
 body {
   line-height: 1;
+  background-color: #f2f2f2;
 }
 ol,
 ul {
@@ -132,6 +133,7 @@ html {
   font-family: 'Lato', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background-color: #f2f2f2;
 }
 
 a:hover, a:focus, a:active {
@@ -149,10 +151,6 @@ a:hover, a:focus, a:active {
 
 .bottomMenu a:hover {
   color: #fff !important;
-}
-
-.homeMenu a:hover {
-  color: #111 !important;
 }
 
 #mainContainer {

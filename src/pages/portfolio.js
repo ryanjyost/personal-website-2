@@ -145,8 +145,8 @@ class PortfolioPage extends React.Component {
                      display: 'flex',
                      flexWrap: 'wrap',
                      alignItems: 'stretch',
-                     padding: '10px 10px 80px 30px',
-                     // justifyContent: 'center',
+                     padding: '10px 10px 80px 10px',
+                     justifyContent: 'center',
                      overflow: 'auto',
                      marginTop: style.top,
                   }}

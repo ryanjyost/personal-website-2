@@ -41,15 +41,19 @@ export default class ResumePage extends React.Component {
                <div
                   style={{
                      display: 'flex',
-                     // flexWrap: 'wrap',
                      flexDirection: 'column',
                      //alignItems: 'stretch',
-                     padding: '20px 10px 80px 10px',
+                     padding: showSidebar
+                        ? '20px 10px 80px 70px'
+                        : '20px 10px 80px 10px',
                      justifyContent: 'center',
                      overflow: 'auto',
                      marginTop: style.top,
+                     position: 'relative',
+                     // width: width,
                   }}
                >
+                  {/* Download */}
                   <div
                      style={{
                         display: 'flex',
@@ -85,7 +89,9 @@ export default class ResumePage extends React.Component {
                         />
                      </a>
                   </div>
-                  <div style={{ padding: '50px 10px' }}>
+
+                  {/* History */}
+                  <div style={{ padding: '30px 10px' }}>
                      {/* Server Central */}
                      <div
                         style={{
@@ -154,7 +160,7 @@ export default class ResumePage extends React.Component {
                               display: 'flex',
                               flexDirection: 'column',
                               padding: '10px 0px 10px 20px',
-                              maxWidth: 500,
+                              maxWidth: 600,
                            }}
                         >
                            <h5 style={{ marginBottom: 2 }}>
@@ -180,8 +186,7 @@ export default class ResumePage extends React.Component {
                            >
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
                                  Design, develop and maintain intuitive,
@@ -190,8 +195,7 @@ export default class ResumePage extends React.Component {
                               </li>
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
                                  Spearheaded creation of a new React Native
@@ -199,8 +203,7 @@ export default class ResumePage extends React.Component {
                               </li>
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
                                  Build bespoke, efficient workflows and
@@ -211,8 +214,7 @@ export default class ResumePage extends React.Component {
                               </li>
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
                                  Enhance development workflows and application
@@ -221,8 +223,7 @@ export default class ResumePage extends React.Component {
                               </li>
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
                                  Communicate with and collaborate on the
@@ -300,11 +301,11 @@ export default class ResumePage extends React.Component {
                               display: 'flex',
                               flexDirection: 'column',
                               padding: '10px 0px 10px 20px',
-                              maxWidth: 500,
+                              maxWidth: 600,
                            }}
                         >
                            <h5 style={{ marginBottom: 2 }}>
-                              Front End Web Developer
+                              Analyst &rarr; Associate
                            </h5>
                            <h6
                               style={{
@@ -313,7 +314,8 @@ export default class ResumePage extends React.Component {
                                  fontWeight: '400',
                               }}
                            >
-                              ServerCentral
+                              Brownson, Rehmus & Foxworth, Financial &
+                              Investment Advisors
                            </h6>
                            <ul
                               style={{
@@ -326,53 +328,45 @@ export default class ResumePage extends React.Component {
                            >
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
-                                 Design, develop and maintain intuitive,
-                                 highly-visual web applications that increase
-                                 employee productivity
+                                 Utilized my mornings, nights and weekends to
+                                 learn and gain experience in web development
                               </li>
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
-                                 Spearheaded creation of a new React Native
-                                 tablet app for warehouse employees
+                                 Became a CERTIFIED FINANCIAL PLANNER™
+                                 professional
                               </li>
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
-                                 Build bespoke, efficient workflows and
-                                 functionality that touch all aspects of the
-                                 business, e.g.) hardware/infrastructure
-                                 administration in datacenters around the world,
-                                 customer billing, managed services, etc.
+                                 Developed complex, bespoke materials in Excel
+                                 based on client needs, goals and feedback
                               </li>
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
-                                 Enhance development workflows and application
-                                 architecture; vet and incorporate new tools and
-                                 libraries
+                                 Created a data aggregation and organization
+                                 tool that enhanced the efficiency of our
+                                 investment performance and tracking processes
                               </li>
                               <li
                                  style={{
-                                    padding: '5px 0px',
-                                    borderBottom: '1px solid #e5e5e5',
+                                    padding: '8px 0px',
                                  }}
                               >
-                                 Communicate with and collaborate on the
-                                 company’s internal, RESTful APIs
+                                 Managed a large, diverse range of data
+                                 resources and channeled them into client-ready
+                                 deliverables
                               </li>
                            </ul>
                         </div>

@@ -23,9 +23,7 @@ export default class Project extends React.Component {
 
       let projectWidth = '100%';
 
-      if (width > 900) {
-         projectWidth = '25%';
-      } else if (width > 1000) {
+      if (width > 1000) {
          projectWidth = `calc(33% - ${projectMargin * 6 + 20}px)`;
       } else if (width > 700) {
          projectWidth = `calc(50% - ${projectMargin * 4 + 20}px)`;
@@ -152,6 +150,9 @@ export default class Project extends React.Component {
                   position: 'absolute',
                   width: '100%',
                   bottom: 0,
+                  border: '1px solid #fcfcfc',
+                  borderBottom: 'none',
+                  borderTop: '1px solid #eee',
                }}
             >
                <a
@@ -159,7 +160,7 @@ export default class Project extends React.Component {
                   // target="_blank"
                   style={{
                      backgroundColor: hoverGithub ? '#f2f2f2' : '#fcfcfc',
-                     border: '1px solid  #eee',
+                     borderRight: '1px solid  #eee',
                      color: hoverGithub ? '#888' : '#a4a4a4',
                      padding: '5px 10px',
                      display: 'flex',
@@ -187,7 +188,7 @@ export default class Project extends React.Component {
                      // target="_blank"
                      style={{
                         backgroundColor: hoverNPM ? '#f2f2f2' : '#fcfcfc',
-                        border: '1px solid  #eee',
+                        borderRight: '1px solid  #eee',
                         color: hoverNPM ? '#888' : '#a4a4a4',
                         padding: '5px 10px',
                         display: 'flex',
@@ -215,7 +216,7 @@ export default class Project extends React.Component {
                      target="_blank"
                      style={{
                         backgroundColor: hoverLink ? '#f2f2f2' : '#fcfcfc',
-                        border: '1px solid  #eee',
+                        // border: '1px solid  #eee',
                         color: hoverLink ? '#888' : '#a4a4a4',
                         padding: '5px 10px',
                         display: 'flex',

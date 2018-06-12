@@ -112,6 +112,8 @@ export default class Article extends React.Component {
                   position: 'absolute',
                   width: '100%',
                   bottom: 0,
+                  border: '1px solid #fcfcfc',
+                  borderTop: '1px solid #eee',
                }}
             >
                <a
@@ -119,7 +121,7 @@ export default class Article extends React.Component {
                   target="_blank"
                   style={{
                      backgroundColor: hoverLink ? '#f2f2f2' : '#fcfcfc',
-                     border: '1px solid  #eee',
+                     // border: '1px solid  #eee',
                      color: hoverLink ? '#888' : '#a4a4a4',
                      padding: '5px 10px',
                      display: 'flex',

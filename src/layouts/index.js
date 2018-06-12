@@ -62,7 +62,7 @@ export default class Layout extends React.Component {
             style={{
                //height: '100vh',
                // overflow: 'hidden',
-               backgroundColor: '#f7f7f7',
+               backgroundColor: '#f2f2f2',
                margin: 'auto',
             }}
          >
@@ -97,7 +97,7 @@ export default class Layout extends React.Component {
             <div
                style={{
                   margin: 'auto',
-                  backgroundColor: '#f7f7f7',
+                  backgroundColor: '#f2f2f2',
                   width: '100%',
                }}
             >
@@ -114,7 +114,7 @@ export default class Layout extends React.Component {
                <div
                   id={'content'}
                   style={
-                     showSidebar && !isHome
+                     showSidebar
                         ? {
                              margin: '0 auto',
                              height: '100vh',
@@ -123,27 +123,22 @@ export default class Layout extends React.Component {
                              top: 0,
                              left: sidebarWidth,
                              width: 'auto',
-                             backgroundColor: '#f7f7f7',
+                             backgroundColor: '#f2f2f2',
                           }
-                        : isHome
-                           ? {
-                                width: 0,
-                                height: 0,
-                             }
-                           : {
-                                margin: '0 auto',
-                                padding: '0px',
-                                backgroundColor: '#f7f7f7',
-                                height: '100vh',
-                                overflow: 'auto',
-                                position: 'relative',
-                                maxWidth: 1000,
-                             }
+                        : {
+                             margin: '0 auto',
+                             padding: '0px',
+                             backgroundColor: '#f2f2f2',
+                             height: '100vh',
+                             overflow: 'auto',
+                             position: 'relative',
+                             maxWidth: 1000,
+                          }
                   }
                >
                   <div
                      style={{
-                        backgroundColor: '#f7f7f7',
+                        backgroundColor: '#f2f2f2',
                         position: 'relative',
                         maxWidth: 1000,
                      }}
