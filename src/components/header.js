@@ -8,7 +8,7 @@ export default class Header extends React.Component {
       super(props);
       this.state = {
          didMount: false,
-         currentMessage: `Hi, I'm Ryan. I'm a web developer`,
+         currentMessage: `Hi, I'm Ryan. Welcome to my `,
          isFirstPath: true,
          visitedPortfolio: false,
          visitedSkills: false,

@@ -43,16 +43,16 @@ export default class ResumePage extends React.Component {
             {style => (
                <div
                   style={{
-                     display: 'flex',
-                     flexDirection: 'column',
+                     // display: 'flex',
+                     // flexDirection: 'column',
                      //alignItems: 'stretch',
                      padding: showSidebar
-                        ? '20px 10px 80px 70px'
-                        : '20px 10px 80px 10px',
+                        ? '20px 10px 200px 70px'
+                        : '20px 10px 200px 10px',
                      justifyContent: 'center',
                      overflow: 'auto',
                      marginTop: style.top,
-                     position: 'relative',
+                     // position: 'relative',
                      // width: width,
                   }}
                >
@@ -174,6 +174,7 @@ export default class ResumePage extends React.Component {
                                  color: '#999',
                                  fontStyle: 'italic',
                                  fontWeight: '400',
+                                 marginBottom: 15,
                               }}
                            >
                               ServerCentral
@@ -315,6 +316,8 @@ export default class ResumePage extends React.Component {
                                  color: '#999',
                                  fontStyle: 'italic',
                                  fontWeight: '400',
+                                 fontSize: 15,
+                                 marginBottom: 15,
                               }}
                            >
                               Brownson, Rehmus & Foxworth, Financial &

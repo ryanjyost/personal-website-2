@@ -291,7 +291,10 @@ export default class SkillsPage extends React.Component {
          <div
             style={{
                padding: '30px 5% 80px 5%',
-               justifyContent: 'center',
+               display: 'flex',
+               flexWrap: 'wrap',
+               alignItems: 'stretch',
+               // justifyContent: 'center',
                marginTop: showSidebar ? 70 : 70,
                overflow: 'auto',
             }}
