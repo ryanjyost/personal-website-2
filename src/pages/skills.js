@@ -289,6 +289,7 @@ export default class SkillsPage extends React.Component {
                padding: '30px 5% 80px 5%',
                justifyContent: 'center',
                marginTop: showSidebar ? 70 : 70,
+               overflow: 'auto',
             }}
          >
             <h6
