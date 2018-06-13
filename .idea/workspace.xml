@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f53c0f10-174e-4a3f-bac3-f93adf139413" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/skills.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,14 +13,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5718901">
+    <splitter split-orientation="horizontal" split-proportion="0.5016155">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="portfolio.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pages/portfolio.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="199">
-                  <caret line="127" column="19" lean-forward="true" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+                  <caret line="127" column="19" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#26#0" />
                     <element signature="e#339#4623#0" />
@@ -55,11 +54,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/Sidebar.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1060">
-                  <caret line="57" column="19" lean-forward="true" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+                  <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#41#0" />
                     <element signature="e#202#228#0" />
@@ -68,11 +67,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/layouts/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
+                <state relative-caret-position="570">
+                  <caret line="119" column="16" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
                   <folding>
                     <element signature="e#1925#3129#0" />
                   </folding>
@@ -87,8 +86,8 @@
           <file leaf-file-name="skills.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/pages/skills.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="173">
-                  <caret line="289" column="40" lean-forward="true" selection-start-line="289" selection-start-column="40" selection-end-line="289" selection-end-column="40" />
+                <state relative-caret-position="382">
+                  <caret line="228" column="55" lean-forward="true" selection-start-line="228" selection-start-column="55" selection-end-line="228" selection-end-column="55" />
                   <folding>
                     <element signature="e#0#26#0" />
                     <element signature="e#302#5082#0" />
@@ -117,11 +116,6 @@
                     <element signature="e#4518#4679#0" />
                     <element signature="e#4691#4876#0" />
                     <element signature="e#4887#5073#0" />
-                    <element signature="e#5120#7767#0" />
-                    <element signature="e#5209#7747#0" />
-                    <element signature="e#5246#5322#0" />
-                    <element signature="e#5346#5820#0" />
-                    <element signature="e#5669#5782#0" />
                     <element signature="e#5881#7707#0" />
                     <element signature="e#5914#6518#0" />
                     <element signature="e#6603#6949#0" />
@@ -214,9 +208,9 @@
         <option value="$PROJECT_DIR$/src/components/Menu.js" />
         <option value="$PROJECT_DIR$/src/components/header.js" />
         <option value="$PROJECT_DIR$/src/pages/resume.js" />
-        <option value="$PROJECT_DIR$/src/pages/skills.js" />
         <option value="$PROJECT_DIR$/src/components/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/layouts/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/skills.js" />
       </list>
     </option>
   </component>
@@ -319,12 +313,12 @@
       <workItem from="1528332323673" duration="2498000" />
       <workItem from="1528411979678" duration="345000" />
       <workItem from="1528412354725" duration="8378000" />
-      <workItem from="1528571645567" duration="59025000" />
+      <workItem from="1528571645567" duration="59551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70246000" />
+    <option name="totallyTimeSpent" value="70772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
@@ -422,11 +416,6 @@
             <element signature="e#4518#4679#0" />
             <element signature="e#4691#4876#0" />
             <element signature="e#4887#5073#0" />
-            <element signature="e#5120#7767#0" />
-            <element signature="e#5209#7747#0" />
-            <element signature="e#5246#5322#0" />
-            <element signature="e#5346#5820#0" />
-            <element signature="e#5669#5782#0" />
             <element signature="e#5881#7707#0" />
             <element signature="e#5914#6518#0" />
             <element signature="e#6603#6949#0" />
@@ -686,10 +675,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1511">
+          <caret line="149" selection-start-line="149" selection-end-line="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/portfolio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="127" column="19" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" />
+            <element signature="e#339#4623#0" />
+            <element signature="e#350#923#0" />
+            <element signature="e#570#798#0" />
+            <element signature="e#934#1450#0" />
+            <element signature="e#1159#1318#0" />
+            <element signature="e#1461#2096#0" />
+            <element signature="e#1681#1838#0" />
+            <element signature="e#2107#2509#0" />
+            <element signature="e#2520#2866#0" />
+            <element signature="e#2877#3314#0" />
+            <element signature="e#3325#3646#0" />
+            <element signature="e#3657#4068#0" />
+            <element signature="e#4080#4614#0" />
+            <element signature="e#4314#4468#0" />
+            <element signature="e#4684#4751#0" />
+            <element signature="e#4974#4992#0" />
+            <element signature="e#5729#5943#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layouts/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="119" column="16" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
+          <folding>
+            <element signature="e#1925#3129#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1060">
+          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#41#0" />
+            <element signature="e#202#228#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/skills.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="289" column="40" lean-forward="true" selection-start-line="289" selection-start-column="40" selection-end-line="289" selection-end-column="40" />
+        <state relative-caret-position="382">
+          <caret line="228" column="55" lean-forward="true" selection-start-line="228" selection-start-column="55" selection-end-line="228" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" />
             <element signature="e#302#5082#0" />
@@ -718,11 +762,6 @@
             <element signature="e#4518#4679#0" />
             <element signature="e#4691#4876#0" />
             <element signature="e#4887#5073#0" />
-            <element signature="e#5120#7767#0" />
-            <element signature="e#5209#7747#0" />
-            <element signature="e#5246#5322#0" />
-            <element signature="e#5346#5820#0" />
-            <element signature="e#5669#5782#0" />
             <element signature="e#5881#7707#0" />
             <element signature="e#5914#6518#0" />
             <element signature="e#6603#6949#0" />
@@ -754,61 +793,6 @@
             <element signature="e#10894#11272#0" />
             <element signature="e#10938#11255#0" />
             <element signature="e#10994#11211#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Sidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
-          <caret line="57" column="19" lean-forward="true" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#41#0" />
-            <element signature="e#202#228#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1511">
-          <caret line="149" selection-start-line="149" selection-end-line="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/portfolio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="127" column="19" lean-forward="true" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" />
-            <element signature="e#339#4623#0" />
-            <element signature="e#350#923#0" />
-            <element signature="e#570#798#0" />
-            <element signature="e#934#1450#0" />
-            <element signature="e#1159#1318#0" />
-            <element signature="e#1461#2096#0" />
-            <element signature="e#1681#1838#0" />
-            <element signature="e#2107#2509#0" />
-            <element signature="e#2520#2866#0" />
-            <element signature="e#2877#3314#0" />
-            <element signature="e#3325#3646#0" />
-            <element signature="e#3657#4068#0" />
-            <element signature="e#4080#4614#0" />
-            <element signature="e#4314#4468#0" />
-            <element signature="e#4684#4751#0" />
-            <element signature="e#4974#4992#0" />
-            <element signature="e#5729#5943#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layouts/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
-          <folding>
-            <element signature="e#1925#3129#0" />
           </folding>
         </state>
       </provider>

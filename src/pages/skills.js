@@ -6,6 +6,7 @@ import { Motion, spring, presets } from 'react-motion';
 export default class SkillsPage extends React.Component {
    render() {
       const { images, showSidebar, location } = this.props;
+      console.log(this.props);
 
       const skills = [
          {
@@ -224,7 +225,10 @@ export default class SkillsPage extends React.Component {
                      { ...presets.stiff, ...{ precision: 0.1 } }
                   ),
                   top: spring(
-                     this.props.location.pathname === '/skills' ? 0 : 800,
+                     this.props.location.pathname === '/skills' ||
+                     !('action' in this.props.location)
+                        ? 0
+                        : 800,
                      {
                         ...presets.stiff,
                         ...{ precision: 0.9 },
