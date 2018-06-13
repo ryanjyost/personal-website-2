@@ -174,11 +174,6 @@ export default class Header extends React.Component {
       } = this.props;
       const { didMount } = this.state;
       const currentPath = location.pathname;
-      console.log(
-         showSidebar,
-         showSidebarWide,
-         this.state.currentMessage.length
-      );
 
       const renderHome = () => {
          return (
@@ -234,7 +229,7 @@ export default class Header extends React.Component {
                            '1px 7px 13px -11px rgba(136,136,136,1)',
                      }}
                   >
-                     {isHome ? (
+                     {isHome || !('action' in this.props.location) ? (
                         renderHome()
                      ) : (
                         <div

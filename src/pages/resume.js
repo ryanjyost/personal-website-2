@@ -25,7 +25,10 @@ export default class ResumePage extends React.Component {
             }}
             style={{
                top: spring(
-                  this.props.location.pathname === '/resume' ? 70 : -800,
+                  this.props.location.pathname === '/resume' ||
+                  !('action' in this.props.location)
+                     ? 70
+                     : -800,
                   { ...presets.stiff, ...{ precision: 0.9 } }
                ),
                // height: spring(

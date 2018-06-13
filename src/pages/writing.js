@@ -49,7 +49,10 @@ class WritingPage extends React.Component {
             }}
             style={{
                top: spring(
-                  this.props.location.pathname === '/writing' ? 70 : -800,
+                  this.props.location.pathname === '/writing' ||
+                  !('action' in this.props.location)
+                     ? 70
+                     : -800,
                   { ...presets.stiff, ...{ precision: 0.9 } }
                ),
             }}
