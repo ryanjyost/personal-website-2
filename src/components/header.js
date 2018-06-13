@@ -229,7 +229,7 @@ export default class Header extends React.Component {
                            '1px 7px 13px -11px rgba(136,136,136,1)',
                      }}
                   >
-                     {isHome || !('action' in this.props.location) ? (
+                     {isHome ? (
                         renderHome()
                      ) : (
                         <div
