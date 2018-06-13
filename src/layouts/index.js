@@ -112,6 +112,24 @@ export default class Layout extends React.Component {
                )}
 
                <div
+                  style={{
+                     backgroundColor: '#f2f2f2',
+                     position: 'relative',
+                     maxWidth: 1000,
+                  }}
+               >
+                  <Header
+                     headshot={this.props.data.headshot}
+                     showSidebar={showSidebar}
+                     showSidebarWide={showSidebarWide}
+                     isHome={isHome}
+                     height={height}
+                     width={width}
+                     location={this.props.location}
+                  />
+               </div>
+
+               <div
                   id={'content'}
                   style={
                      showSidebar
@@ -136,23 +154,6 @@ export default class Layout extends React.Component {
                           }
                   }
                >
-                  <div
-                     style={{
-                        backgroundColor: '#f2f2f2',
-                        position: 'relative',
-                        maxWidth: 1000,
-                     }}
-                  >
-                     <Header
-                        headshot={this.props.data.headshot}
-                        showSidebar={showSidebar}
-                        showSidebarWide={showSidebarWide}
-                        isHome={isHome}
-                        height={height}
-                        width={width}
-                        location={this.props.location}
-                     />
-                  </div>
                   {children({
                      ...this.props,
                      ...{ images, showSidebar, height, width },

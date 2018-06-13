@@ -51,8 +51,9 @@ export default class Sidebar extends Component {
                         width: '100%',
                         color: '#f2f2f2',
                         fontSize: 24,
+                        lineHeight: '24px',
                         letterSpacing: '0.03em',
-                        marginBottom: '10px',
+                        marginBottom: '5px',
                      }}
                   >
                      Ryan J Yost
