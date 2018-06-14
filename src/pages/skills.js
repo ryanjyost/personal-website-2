@@ -6,7 +6,6 @@ import { Motion, spring, presets } from 'react-motion';
 export default class SkillsPage extends React.Component {
    render() {
       const { images, showSidebar, location } = this.props;
-      console.log(this.props);
 
       const skills = [
          {
@@ -290,7 +289,7 @@ export default class SkillsPage extends React.Component {
       return (
          <div
             style={{
-               padding: '30px 5% 80px 5%',
+               padding: '30px 50px 80px 50px',
                display: 'flex',
                flexWrap: 'wrap',
                alignItems: 'stretch',
@@ -299,112 +298,142 @@ export default class SkillsPage extends React.Component {
                overflow: 'auto',
             }}
          >
-            <h6
-               style={{
-                  width: '100%',
-                  fontWeight: '100',
-                  color: '#ccc',
-                  //borderBottom: '1px solid #f2f2f2',
-                  paddingBottom: 5,
-               }}
-            >
-               FRONT END
-            </h6>
-            <div
-               style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'center',
-                  // justifyContent: 'center',
-                  padding: '10px 0px 50px 0px',
-               }}
-            >
-               {skills.map((skill, i) => {
-                  if ('type' in skill) {
-                     if (skill.type === 'front') {
-                        return (
-                           <div
-                              key={i}
-                              style={{ marginRight: 10, marginBottom: 10 }}
-                           >
-                              {renderSkill(skill)}
-                           </div>
-                        );
-                     }
-                  }
-               })}
-            </div>
-            <h6
-               style={{
-                  width: '100%',
-                  fontWeight: '100',
-                  color: '#ccc',
-                  //borderBottom: '1px solid #f2f2f2',
-                  paddingBottom: 5,
-               }}
-            >
-               BACK END
-            </h6>
-            <div
-               style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'center',
-                  // justifyContent: 'center',
-                  padding: '10px 0px 50px 0px',
-               }}
-            >
-               {skills.map((skill, i) => {
-                  if ('type' in skill) {
-                     if (skill.type === 'back') {
-                        return (
-                           <div
-                              key={i}
-                              style={{ marginRight: 10, marginBottom: 10 }}
-                           >
-                              {renderSkill(skill)}
-                           </div>
-                        );
-                     }
-                  }
-               })}
-            </div>
-
-            <h6
-               style={{
-                  width: '100%',
-                  fontWeight: '100',
-                  color: '#ccc',
-                  //borderBottom: '1px solid #f2f2f2',
-                  paddingBottom: 5,
-               }}
-            >
-               MISFITS
-            </h6>
-
-            <div
-               style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'center',
-                  // justifyContent: 'center',
-                  padding: '10px 0px 50px 0px',
-                  position: 'relative',
-               }}
-            >
-               {skills.map((skill, i) => {
-                  if (!('type' in skill)) {
-                     return (
-                        <div
-                           key={i}
-                           style={{ marginRight: 10, marginBottom: 10 }}
-                        >
-                           {renderSkill(skill)}
-                        </div>
-                     );
-                  }
-               })}
-            </div>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1>
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>{' '}
+            <h1>heyyyyyyyyyyyyy</h1> <h1>heyyyyyyyyyyyyy</h1>
+            {/*<h6*/}
+            {/*style={{*/}
+            {/*width: '100%',*/}
+            {/*fontWeight: '100',*/}
+            {/*color: '#ccc',*/}
+            {/*//borderBottom: '1px solid #f2f2f2',*/}
+            {/*paddingBottom: 5,*/}
+            {/*}}*/}
+            {/*>*/}
+            {/*FRONT END*/}
+            {/*</h6>*/}
+            {/*<div*/}
+            {/*style={{*/}
+            {/*display: 'flex',*/}
+            {/*flexWrap: 'wrap',*/}
+            {/*alignItems: 'center',*/}
+            {/*// justifyContent: 'center',*/}
+            {/*padding: '10px 0px 50px 0px',*/}
+            {/*}}*/}
+            {/*>*/}
+            {/*{skills.map((skill, i) => {*/}
+            {/*if ('type' in skill) {*/}
+            {/*if (skill.type === 'front') {*/}
+            {/*return (*/}
+            {/*<div*/}
+            {/*key={i}*/}
+            {/*style={{ marginRight: 10, marginBottom: 10 }}*/}
+            {/*>*/}
+            {/*{renderSkill(skill)}*/}
+            {/*</div>*/}
+            {/*);*/}
+            {/*}*/}
+            {/*}*/}
+            {/*})}*/}
+            {/*</div>*/}
+            {/*<h6*/}
+            {/*style={{*/}
+            {/*width: '100%',*/}
+            {/*fontWeight: '100',*/}
+            {/*color: '#ccc',*/}
+            {/*//borderBottom: '1px solid #f2f2f2',*/}
+            {/*paddingBottom: 5,*/}
+            {/*}}*/}
+            {/*>*/}
+            {/*BACK END*/}
+            {/*</h6>*/}
+            {/*<div*/}
+            {/*style={{*/}
+            {/*display: 'flex',*/}
+            {/*flexWrap: 'wrap',*/}
+            {/*alignItems: 'center',*/}
+            {/*// justifyContent: 'center',*/}
+            {/*padding: '10px 0px 50px 0px',*/}
+            {/*}}*/}
+            {/*>*/}
+            {/*{skills.map((skill, i) => {*/}
+            {/*if ('type' in skill) {*/}
+            {/*if (skill.type === 'back') {*/}
+            {/*return (*/}
+            {/*<div*/}
+            {/*key={i}*/}
+            {/*style={{ marginRight: 10, marginBottom: 10 }}*/}
+            {/*>*/}
+            {/*{renderSkill(skill)}*/}
+            {/*</div>*/}
+            {/*);*/}
+            {/*}*/}
+            {/*}*/}
+            {/*})}*/}
+            {/*</div>*/}
+            {/*<h6*/}
+            {/*style={{*/}
+            {/*width: '100%',*/}
+            {/*fontWeight: '100',*/}
+            {/*color: '#ccc',*/}
+            {/*//borderBottom: '1px solid #f2f2f2',*/}
+            {/*paddingBottom: 5,*/}
+            {/*}}*/}
+            {/*>*/}
+            {/*MISFITS*/}
+            {/*</h6>*/}
+            {/*<div*/}
+            {/*style={{*/}
+            {/*display: 'flex',*/}
+            {/*flexWrap: 'wrap',*/}
+            {/*alignItems: 'center',*/}
+            {/*// justifyContent: 'center',*/}
+            {/*padding: '10px 0px 50px 0px',*/}
+            {/*position: 'relative',*/}
+            {/*}}*/}
+            {/*>*/}
+            {/*{skills.map((skill, i) => {*/}
+            {/*if (!('type' in skill)) {*/}
+            {/*return (*/}
+            {/*<div*/}
+            {/*key={i}*/}
+            {/*style={{ marginRight: 10, marginBottom: 10 }}*/}
+            {/*>*/}
+            {/*{renderSkill(skill)}*/}
+            {/*</div>*/}
+            {/*);*/}
+            {/*}*/}
+            {/*})}*/}
+            {/*</div>*/}
          </div>
       );
    }
