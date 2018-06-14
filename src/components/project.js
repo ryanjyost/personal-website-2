@@ -99,7 +99,7 @@ export default class Project extends React.Component {
                         fontSize: 15,
                         fontWeight: 200,
                         padding: '5px 0px 15px 0px',
-                        color: '#888',
+                        color: '#555',
                         textDecoration: 'none',
                         lineHeight: 1.2,
                         letterSpacing: '0.02em',
