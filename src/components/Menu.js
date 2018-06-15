@@ -35,8 +35,8 @@ export default class Menu extends Component {
          <div
             style={{
                background: isHome && showSidebar ? 'transparent' : '#333746',
-               position: 'absolute',
-               bottom: showSidebar ? null : 0,
+               position: 'fixed',
+               bottom: 0,
                display: 'flex',
                flexDirection: 'column',
                justifyContent: 'center',

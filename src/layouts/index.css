@@ -160,7 +160,7 @@ a:hover, a:focus, a:active {
 
 #content {
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  /*-webkit-overflow-scrolling: touch;*/
   height:100%; /*A value other than height:auto needs to be set*/
   font-family: 'Lato', sans-serif;
 }
