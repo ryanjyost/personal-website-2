@@ -14,7 +14,7 @@ class PortfolioPage extends React.Component {
                'A web application that offers a better way to consume political news and opinions.',
             preview: data.dailygray.sizes,
             skills: [
-               'Node',
+               'Node.js',
                'Express',
                'React',
                'MongoDB',
@@ -25,21 +25,6 @@ class PortfolioPage extends React.Component {
             ],
             github: 'https://github.com/ryanjyost/the-daily-gray',
             link: 'http://thedailygray.com/',
-         },
-         {
-            name: 'First Job Finance',
-            desc:
-               'Tools and checklists to help adults-in-progress stress less about their personal finances.',
-            preview: data.fjf.sizes,
-            skills: [
-               'Ember',
-               'Handlebars',
-               'Local Storage',
-               'Sass',
-               'Responsive Design',
-            ],
-            github: 'https://github.com/ryanjyost/the-daily-gray',
-            link: 'http://www.firstjobfinance.com/',
          },
          {
             name: 'React Simple Storage',
@@ -59,6 +44,49 @@ class PortfolioPage extends React.Component {
             npm: 'https://www.npmjs.com/package/react-simple-storage',
          },
          {
+            name: 'News Sites Scraper',
+            desc:
+               'A Node.js program that screenshots and scrapes links from dozens of news sites. It uploads the images to a' +
+               ' CDN' +
+               ' and saves the scraped data and CDN response to a MongoDB database.',
+            preview: data.simpleStorage.sizes,
+            skills: [
+               'Node.js',
+               'Express',
+               'MongoDB',
+               'Async/Await',
+               'Puppeteer',
+            ],
+            github: 'https://github.com/ryanjyost/react-simple-storage',
+            link:
+               'https://ryanjyost.github.io/react-simple-storage-example-project/',
+            npm: 'https://www.npmjs.com/package/react-simple-storage',
+         },
+         {
+            name: 'First Job Finance',
+            desc:
+               'Tools and checklists to help adults-in-progress stress less about their personal finances.',
+            preview: data.fjf.sizes,
+            skills: [
+               'Ember',
+               'Handlebars',
+               'Local Storage',
+               'Sass',
+               'Responsive Design',
+            ],
+            github: 'https://github.com/ryanjyost/the-daily-gray',
+            link: 'http://www.firstjobfinance.com/',
+         },
+         {
+            name: 'The Daily Gray Chrome Extension',
+            desc:
+               'A chrome extension used to rate, curate and submit content to The Daily Gray.',
+            preview: data.extension.sizes,
+            skills: ['JavaScript', 'Google API', 'The Daily Gray API'],
+            github: 'https://github.com/ryanjyost/stellar-account-dashboard',
+            link: 'https://stellar-account-data.herokuapp.com/',
+         },
+         {
             name: '100DaysOfJournaling',
             desc:
                'Develop a journaling habit and join a community of anonymous journalers.',
@@ -74,15 +102,6 @@ class PortfolioPage extends React.Component {
             skills: ['JavaScript', 'LocalStorage', 'Bootstrap'],
             github: 'https://github.com/ryanjyost/dom-events',
             link: 'http://domevents.info/',
-         },
-         {
-            name: 'The Daily Gray Chrome Extension',
-            desc:
-               'A chrome extension used to rate, curate and submit content to The Daily Gray.',
-            preview: data.extension.sizes,
-            skills: ['JavaScript', 'Google API', 'The Daily Gray API'],
-            github: 'https://github.com/ryanjyost/stellar-account-dashboard',
-            link: 'https://stellar-account-data.herokuapp.com/',
          },
          {
             name: 'Personal Website 1.0',
@@ -101,7 +120,6 @@ class PortfolioPage extends React.Component {
             github: 'https://github.com/ryanjyost/stellar-account-dashboard',
             link: 'https://stellar-account-data.herokuapp.com/',
          },
-
          {
             name: 'Rainy Day Fund App',
             desc:

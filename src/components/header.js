@@ -419,75 +419,96 @@ export default class Header extends React.Component {
                         </div>
                      )}
                   </div>
-                  {width < 500 ? (
-                     <div
-                        style={{
-                           position: 'absolute',
-                           bottom: '45px',
-                           width: '100%',
-                           color: '#d8d8d8',
-                           zIndex: 1300,
-                           display: 'flex',
-                           alignItems: 'center',
-                           fontSize: 12,
-                           letterSpacing: '0.02em',
-                           fontWeight: '300',
-                        }}
-                     >
-                        <div
-                           style={{
-                              flex: 0.2,
-                              textAlign: 'center',
-                              flexDirection: 'column',
-                              justifyContent: 'center',
-                           }}
-                        >
-                           <div>About Me</div>
-                           <i className="fas fa-angle-down" />
-                        </div>
-                        <div
-                           style={{
-                              flex: 0.2,
-                              textAlign: 'center',
-                              flexDirection: 'column',
-                              justifyContent: 'center',
-                           }}
-                        >
-                           <div>Writing</div>
-                           <i className="fas fa-angle-down" />
-                        </div>
-                        <div
-                           style={{
-                              flex: 0.2,
-                              textAlign: 'center',
-                              flexDirection: 'column',
-                              justifyContent: 'center',
-                           }}
-                        />
-                        <div
-                           style={{
-                              flex: 0.2,
-                              textAlign: 'center',
-                              flexDirection: 'column',
-                              justifyContent: 'center',
-                           }}
-                        >
-                           <div>Portfolio</div>
-                           <i className="fas fa-angle-down" />
-                        </div>
-                        <div
-                           style={{
-                              flex: 0.2,
-                              textAlign: 'center',
-                              flexDirection: 'column',
-                              justifyContent: 'center',
-                           }}
-                        >
-                           <div>Skills</div>
-                           <i className="fas fa-angle-down" />
-                        </div>
-                     </div>
-                  ) : null}
+
+                  <Link
+                     to="/portfolio"
+                     style={{
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        position: 'absolute',
+                        bottom: '70px',
+                        zIndex: 1300,
+                        padding: showSidebar ? '0px 70px' : '0px 25px',
+                        fontSize: 18,
+                     }}
+                  >
+                     <i
+                        className={'fas fa-hand-point-right'}
+                        style={{ marginRight: 10, fontSize: 20 }}
+                     />
+                     <div>Check out what I've built (so far)</div>
+                  </Link>
+
+                  {/*{width < 500 ? (*/}
+                  {/*<div*/}
+                  {/*style={{*/}
+                  {/*position: 'absolute',*/}
+                  {/*bottom: '45px',*/}
+                  {/*width: '100%',*/}
+                  {/*color: '#d8d8d8',*/}
+                  {/*zIndex: 1300,*/}
+                  {/*display: 'flex',*/}
+                  {/*alignItems: 'center',*/}
+                  {/*fontSize: 12,*/}
+                  {/*letterSpacing: '0.02em',*/}
+                  {/*fontWeight: '300',*/}
+                  {/*}}*/}
+                  {/*>*/}
+                  {/*<div*/}
+                  {/*style={{*/}
+                  {/*flex: 0.2,*/}
+                  {/*textAlign: 'center',*/}
+                  {/*flexDirection: 'column',*/}
+                  {/*justifyContent: 'center',*/}
+                  {/*}}*/}
+                  {/*>*/}
+                  {/*<div>About Me</div>*/}
+                  {/*<i className="fas fa-angle-down" />*/}
+                  {/*</div>*/}
+                  {/*<div*/}
+                  {/*style={{*/}
+                  {/*flex: 0.2,*/}
+                  {/*textAlign: 'center',*/}
+                  {/*flexDirection: 'column',*/}
+                  {/*justifyContent: 'center',*/}
+                  {/*}}*/}
+                  {/*>*/}
+                  {/*<div>Writing</div>*/}
+                  {/*<i className="fas fa-angle-down" />*/}
+                  {/*</div>*/}
+                  {/*<div*/}
+                  {/*style={{*/}
+                  {/*flex: 0.2,*/}
+                  {/*textAlign: 'center',*/}
+                  {/*flexDirection: 'column',*/}
+                  {/*justifyContent: 'center',*/}
+                  {/*}}*/}
+                  {/*/>*/}
+                  {/*<div*/}
+                  {/*style={{*/}
+                  {/*flex: 0.2,*/}
+                  {/*textAlign: 'center',*/}
+                  {/*flexDirection: 'column',*/}
+                  {/*justifyContent: 'center',*/}
+                  {/*}}*/}
+                  {/*>*/}
+                  {/*<div>Portfolio</div>*/}
+                  {/*<i className="fas fa-angle-down" />*/}
+                  {/*</div>*/}
+                  {/*<div*/}
+                  {/*style={{*/}
+                  {/*flex: 0.2,*/}
+                  {/*textAlign: 'center',*/}
+                  {/*flexDirection: 'column',*/}
+                  {/*justifyContent: 'center',*/}
+                  {/*}}*/}
+                  {/*>*/}
+                  {/*<div>Skills</div>*/}
+                  {/*<i className="fas fa-angle-down" />*/}
+                  {/*</div>*/}
+                  {/*</div>*/}
+                  {/*) : null}*/}
                </div>
             )}
          </Motion>
