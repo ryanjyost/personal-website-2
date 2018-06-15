@@ -17,8 +17,8 @@ export default class Sidebar extends Component {
       } = this.props;
 
       const activeStyle = {
-         color: 'white',
-         backgroundColor: '#43B2AA',
+         color: isHome ? '#333746' : 'white',
+         backgroundColor: isHome ? '#f2f2f2' : '#43B2AA',
          fontWeight: '400',
          borderBottomRightRadius: showSidebarWide ? 50 : 50,
          borderTopRightRadius: showSidebarWide ? 50 : 50,
@@ -103,6 +103,7 @@ export default class Sidebar extends Component {
                   to="/"
                   style={inactiveButtonStyle}
                   activeStyle={activeStyle}
+                  id={isHome ? 'homeBtn' : ''}
                >
                   <i
                      className="fas fa-home"
@@ -144,15 +145,15 @@ export default class Sidebar extends Component {
                   {showSidebarWide ? 'Writing' : null}
                </Link>
                <Link
-                  to="/resume"
+                  to="/about"
                   style={inactiveButtonStyle}
                   activeStyle={activeStyle}
                >
                   <i
-                     className="far fa-file-alt"
+                     className="fas fa-user"
                      style={{ fontSize: 20, marginRight: 8 }}
                   />
-                  {showSidebarWide ? 'Experience' : null}
+                  {showSidebarWide ? 'About Me' : null}
                </Link>
             </div>
          </div>

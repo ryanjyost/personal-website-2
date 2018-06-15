@@ -69,15 +69,15 @@ export default class Menu extends Component {
                   className={'bottomMenu'}
                >
                   <Link
-                     to="/resume"
+                     to="/about"
                      style={inactiveButtonStyle}
                      activeStyle={activeStyle}
                   >
                      <i
-                        className="far fa-file-alt"
+                        className="fas fa-user"
                         style={{ fontSize: 20, marginRight: 8 }}
                      />
-                     {showMenuText ? 'Experience' : null}
+                     {showMenuText ? 'About Me' : null}
                   </Link>
                   <Link
                      to="/writing"

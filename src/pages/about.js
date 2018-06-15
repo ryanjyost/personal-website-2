@@ -25,7 +25,7 @@ export default class ResumePage extends React.Component {
             }}
             style={{
                top: spring(
-                  this.props.location.pathname === '/resume' ||
+                  this.props.location.pathname === '/about' ||
                   !('action' in this.props.location)
                      ? 70
                      : -800,
@@ -373,6 +373,150 @@ export default class ResumePage extends React.Component {
                                  Managed a large, diverse range of data
                                  resources and channeled them into client-ready
                                  deliverables
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+
+                     {/* Michigan */}
+                     <div
+                        style={{
+                           display: 'flex',
+                           alignItems: 'stretch',
+                           justifyContent: 'center',
+                           marginBottom: 20,
+                        }}
+                     >
+                        <div
+                           style={{
+                              flex: 0.2,
+                              flexDirection: 'column',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              display: 'flex',
+                              fontSize: 12,
+                              color: '#fff',
+                              fontWeight: '400',
+                              letterSpacing: '0.03em',
+                           }}
+                        >
+                           <div
+                              style={{
+                                 backgroundColor: '#A1DEDA',
+                                 //padding: '10px 10px',
+                                 borderRadius: 9999,
+                                 height: 50,
+                                 width: 50,
+                                 display: 'flex',
+                                 flexDirection: 'column',
+                                 alignItems: 'center',
+                                 justifyContent: 'center',
+                              }}
+                           >
+                              <div>May</div>
+                              <div>2015</div>
+                           </div>
+                           <div
+                              style={{
+                                 height: '100%',
+                                 backgroundColor: '#e5e5e5',
+                                 width: 2,
+                                 flex: 0.8,
+                              }}
+                           />
+                           <div
+                              style={{
+                                 backgroundColor: '#A1DEDA',
+                                 //padding: '10px 10px',
+                                 borderRadius: 9999,
+                                 height: 50,
+                                 width: 50,
+                                 display: 'flex',
+                                 flexDirection: 'column',
+                                 alignItems: 'center',
+                                 justifyContent: 'center',
+                              }}
+                           >
+                              <div>Sep</div>
+                              <div>2011</div>
+                           </div>
+                        </div>
+                        <div
+                           style={{
+                              display: 'flex',
+                              flexDirection: 'column',
+                              padding: '10px 0px 10px 20px',
+                              maxWidth: 600,
+                           }}
+                        >
+                           <h5 style={{ marginBottom: 2 }}>Student</h5>
+                           <h6
+                              style={{
+                                 color: '#999',
+                                 fontStyle: 'italic',
+                                 fontWeight: '400',
+                                 fontSize: 15,
+                                 marginBottom: 15,
+                              }}
+                           >
+                              University of Michigan, College of Literature,
+                              Science & the Arts
+                           </h6>
+                           <ul
+                              style={{
+                                 listStyle: 'none',
+                                 padding: '0px 0px 0px 0px',
+                                 color: '#888',
+                                 fontWeight: '400',
+                                 fontSize: 14,
+                              }}
+                           >
+                              <li
+                                 style={{
+                                    padding: '8px 0px',
+                                 }}
+                              >
+                                 BA in Economics
+                              </li>
+                              <li
+                                 style={{
+                                    padding: '8px 0px',
+                                 }}
+                              >
+                                 BA in German
+                              </li>
+                              <li
+                                 style={{
+                                    padding: '8px 0px',
+                                 }}
+                              >
+                                 GPA: 3.88/4.0; Graduated with High Distinction
+                              </li>
+                              <li
+                                 style={{
+                                    padding: '8px 0px',
+                                 }}
+                              >
+                                 Spent every summer interning in a
+                                 finance-related role.
+                              </li>
+                              <li
+                                 style={{
+                                    padding: '8px 0px',
+                                 }}
+                              >
+                                 Washed dishes in the dining halls and delivered
+                                 pizza for a local shop.
+                              </li>
+                              <li
+                                 style={{
+                                    padding: '8px 0px',
+                                 }}
+                              >
+                                 Notable courses completed: Statistics,
+                                 Multivariable Calculus, Game Theory,
+                                 Mathematical Statistics, Econometrics, Formal
+                                 Logic
                               </li>
                            </ul>
                         </div>

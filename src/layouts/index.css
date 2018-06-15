@@ -138,6 +138,7 @@ html {
 
 a:hover, a:focus, a:active {
   text-decoration: none !important;
+  /*transition: all 0.2s ease-out;*/
 }
 
 .project__link:hover {
@@ -160,11 +161,15 @@ a:hover, a:focus, a:active {
 
 #content {
   overflow-y: scroll;
-  /*-webkit-overflow-scrolling: touch;*/
+  -webkit-overflow-scrolling: touch;
   height:100%; /*A value other than height:auto needs to be set*/
   font-family: 'Lato', sans-serif;
 }
 
 .message {
   font-family: 'Lato', sans-serif;
+}
+
+#homeBtn:hover {
+  color: #333746 !important;
 }

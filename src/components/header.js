@@ -2,13 +2,14 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
 import { Motion, spring, presets } from 'react-motion';
+import { withPrefix } from 'gatsby-link/index';
 
 export default class Header extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
          didMount: false,
-         currentMessage: `Hi, I'm Ryan. Welcome to my `,
+         currentMessage: `Hi, I'm Ryan. Glad you made it to my website.`,
          isFirstPath: true,
          visitedPortfolio: false,
          visitedSkills: false,
@@ -147,7 +148,7 @@ export default class Header extends React.Component {
                this.setState({ visitedArticles: true });
                this.articlesMessage();
                break;
-            case '/resume':
+            case '/about':
                this.setState({ visitedResume: true });
                this.resumeMessage();
                break;
@@ -174,12 +175,130 @@ export default class Header extends React.Component {
       } = this.props;
       const { didMount } = this.state;
       const currentPath = location.pathname;
+      const buttons = [
+         {
+            text: 'ryanjyost@gmail.com',
+            icon: 'fas fa-envelope',
+            link: 'mailto:ryanjyost@gmail.com',
+         },
+         {
+            text: 'GitHub',
+            icon: 'fab fa-github',
+            link: 'https://github.com/ryanjyost',
+         },
+         {
+            text: 'LinkedIn',
+            icon: 'fab fa-linkedin',
+            link: 'https://www.linkedin.com/in/ryan-yost-b5b2bb65/',
+         },
+         {
+            text: '@ryanjyost',
+            icon: 'fab fa-twitter',
+            link: 'https://twitter.com/ryanjyost',
+         },
+         {
+            text: 'Resume',
+            icon: 'fas fa-cloud-download-alt',
+         },
+      ];
 
       const renderHome = () => {
+         const renderButton = btn => {
+            return (
+               <a
+                  href={
+                     btn.text === 'Resume' ? withPrefix('resume.pdf') : btn.link
+                  }
+                  style={{
+                     display: 'flex',
+                     justifyContent: 'center',
+                     alignItems: 'center',
+                     backgroundColor: '#fcfcfc',
+                     WebkitBoxShadow: '0 2px 4px #d8d8d8, 0 2px 2px #d8d8d8',
+                     transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+                     border: '1px solid #f2f2f2',
+                     padding: '5px 20px',
+                     borderRadius: 50,
+                     fontSize: 16,
+                     color: '#333746',
+                     fontWeight: '400',
+                     letterSpacing: '0.02em',
+                     margin: '10px 10px',
+                  }}
+                  download={btn.download}
+               >
+                  <i
+                     className={btn.icon}
+                     style={{ marginRight: 10, fontSize: 20 }}
+                  />
+                  {btn.text}
+               </a>
+            );
+         };
          return (
-            <div>
-               Seamlessly responsive web design <br /> pulsating arrows to next
-               section, contact icons in sidebar
+            <div
+               style={{
+                  padding: showSidebar ? '0px 50px' : '0px 10px',
+                  marginBottom: 100,
+                  maxWidth: 700,
+               }}
+            >
+               <div
+                  style={{
+                     fontSize: 20,
+                     color: '#fafafa',
+                     // display: 'flex',
+                     // alignItems: 'baseline',
+                     // flexWrap: 'wrap',
+                     // textAlign: 'justify',
+                     letterSpacing: '0.02em',
+                     fontWeight: '300',
+                  }}
+               >
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                     <Img
+                        title="Headshot"
+                        alt="Ryan Yost Headshot"
+                        sizes={headshot.sizes}
+                        style={{
+                           height: 70,
+                           width: 70,
+                           borderRadius: '9999px',
+                           border: '2px solid #A1DEDA',
+                           marginRight: 15,
+                        }}
+                     />
+                     <span style={{ fontSize: 36, fontWeight: 'bold' }}>
+                        Hi, I'm Ryan.&nbsp;
+                     </span>{' '}
+                  </div>
+                  <div style={{ marginTop: 5 }}>
+                     I'm a{' '}
+                     <strong style={{ fontSize: 22 }}>web developer</strong>{' '}
+                     who's all about creating unique, responsive{' '}
+                     <strong style={{ fontSize: 22 }}>web apps</strong>, rooted
+                     in fundamental{' '}
+                     <strong style={{ fontSize: 22 }}>
+                        UI design principles
+                     </strong>{' '}
+                     and built with{' '}
+                     <strong style={{ fontSize: 22 }}>modern tech</strong>.
+                  </div>
+                  <div
+                     style={{
+                        marginTop: 30,
+                        display: 'flex',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                     }}
+                  >
+                     {buttons.map(btn => {
+                        return renderButton(btn);
+                     })}
+                  </div>
+               </div>
+               {/*Seamlessly responsive web design <br /> pulsating arrows to next*/}
+               {/*section, contact icons in sidebar*/}
             </div>
          );
       };
@@ -212,14 +331,18 @@ export default class Header extends React.Component {
                   <div
                      style={{
                         height: style.height,
+                        position: 'relative',
                         width: width,
                         display: 'flex',
                         padding: showSidebar
                            ? '20px 15px 20px 25px'
                            : '10px 15px 10px 15px',
                         alignItems: showSidebar ? 'flex-start' : 'center',
-                        justifyContent: 'center',
-                        backgroundColor: '#fff',
+                        justifyContent: isHome ? 'center' : 'center',
+                        backgroundColor: isHome ? 'rgba(67,178,170,1)' : '#fff',
+                        // background: isHome
+                        //    ? 'linear-gradient(-45deg, rgba(204,232,230,1) 0%, rgba(67,178,170,1) 100%)'
+                        //    : '#fff',
                         overflowWrap: 'break-word',
                         //position: 'fixed',
                         marginTop: 0,
@@ -296,6 +419,75 @@ export default class Header extends React.Component {
                         </div>
                      )}
                   </div>
+                  {width < 500 ? (
+                     <div
+                        style={{
+                           position: 'absolute',
+                           bottom: '45px',
+                           width: '100%',
+                           color: '#d8d8d8',
+                           zIndex: 1300,
+                           display: 'flex',
+                           alignItems: 'center',
+                           fontSize: 12,
+                           letterSpacing: '0.02em',
+                           fontWeight: '300',
+                        }}
+                     >
+                        <div
+                           style={{
+                              flex: 0.2,
+                              textAlign: 'center',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                           }}
+                        >
+                           <div>About Me</div>
+                           <i className="fas fa-angle-down" />
+                        </div>
+                        <div
+                           style={{
+                              flex: 0.2,
+                              textAlign: 'center',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                           }}
+                        >
+                           <div>Writing</div>
+                           <i className="fas fa-angle-down" />
+                        </div>
+                        <div
+                           style={{
+                              flex: 0.2,
+                              textAlign: 'center',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                           }}
+                        />
+                        <div
+                           style={{
+                              flex: 0.2,
+                              textAlign: 'center',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                           }}
+                        >
+                           <div>Portfolio</div>
+                           <i className="fas fa-angle-down" />
+                        </div>
+                        <div
+                           style={{
+                              flex: 0.2,
+                              textAlign: 'center',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                           }}
+                        >
+                           <div>Skills</div>
+                           <i className="fas fa-angle-down" />
+                        </div>
+                     </div>
+                  ) : null}
                </div>
             )}
          </Motion>
