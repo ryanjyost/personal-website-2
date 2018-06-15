@@ -50,7 +50,7 @@ export default class ResumePage extends React.Component {
                         ? '20px 10px 200px 70px'
                         : '20px 10px 200px 10px',
                      justifyContent: 'center',
-                     overflow: 'auto',
+                     overflow: 'scroll',
                      marginTop: style.top,
                      // position: 'relative',
                      // width: width,

@@ -212,123 +212,77 @@ export default class SkillsPage extends React.Component {
 
       const renderSkill = skill => {
          const screenSizeFactor = showSidebar ? 1 : 0.5;
-
-         {
-            /*<Motion*/
-         }
-         {
-            /*defaultStyle={{*/
-         }
-         {
-            /*opacity: 0,*/
-         }
-         {
-            /*top: 800,*/
-         }
-         {
-            /*}}*/
-         }
-         {
-            /*style={{*/
-         }
-         {
-            /*opacity: spring(*/
-         }
-         {
-            /*this.props.location.pathname === '/skills' ? 1 : 0,*/
-         }
-         {
-            /*{ ...presets.stiff, ...{ precision: 0.1 } }*/
-         }
-         {
-            /*),*/
-         }
-         {
-            /*top: spring(*/
-         }
-         {
-            /*this.props.location.pathname === '/skills' ||*/
-         }
-         {
-            /*!('action' in this.props.location)*/
-         }
-         {
-            /*? 0*/
-         }
-         {
-            /*: 800,*/
-         }
-         {
-            /*{*/
-         }
-         {
-            /*...presets.stiff,*/
-         }
-         {
-            /*...{ precision: 0.9 },*/
-         }
-         {
-            /*}*/
-         }
-         {
-            /*),*/
-         }
-         {
-            /*}}*/
-         }
-         {
-            /*>*/
-         }
-         {
-            /*{style => (*/
-         }
          return (
-            <div
+            <Motion
+               defaultStyle={{
+                  opacity: 0,
+                  top: 800,
+               }}
                style={{
-                  backgroundColor: '#fff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  //justifyContent: 'space-between',
-                  WebkitBoxShadow: '1px 7px 13px -11px rgba(136,136,136,1)',
-                  padding: '10px 15px',
-                  border: '1px solid #f2f2f2',
-                  borderRadius: 5,
-                  color: '#666',
-                  letterSpacing: '0.02em',
-                  marginTop: 0,
+                  opacity: spring(
+                     this.props.location.pathname === '/skills' ? 1 : 0,
+                     { ...presets.stiff, ...{ precision: 0.1 } }
+                  ),
+                  top: spring(
+                     this.props.location.pathname === '/skills' ||
+                     !('action' in this.props.location)
+                        ? 0
+                        : 800,
+                     {
+                        ...presets.stiff,
+                        ...{ precision: 0.9 },
+                     }
+                  ),
                }}
             >
-               {skill.isFile ? (
-                  <Img
-                     sizes={skill.icon}
+               {style => (
+                  <div
                      style={{
-                        height: Math.floor(20 * 2 * screenSizeFactor),
-                        width: Math.floor(20 * 2 * screenSizeFactor + 2),
-                        marginRight: 7,
+                        backgroundColor: '#fff',
+                        display: 'flex',
+                        alignItems: 'center',
+                        //justifyContent: 'space-between',
+                        WebkitBoxShadow:
+                           '1px 7px 13px -11px rgba(136,136,136,1)',
+                        padding: '10px 15px',
+                        border: '1px solid #f2f2f2',
+                        borderRadius: 5,
+                        color: '#666',
+                        letterSpacing: '0.02em',
+                        marginTop: -style.top,
                      }}
-                  />
-               ) : (
-                  <i
-                     className={skill.icon}
-                     style={{
-                        fontSize: Math.floor(20 * 2 * screenSizeFactor),
-                        marginRight: 7,
-                        color: skill.color,
-                     }}
-                  />
+                  >
+                     {skill.isFile ? (
+                        <Img
+                           sizes={skill.icon}
+                           style={{
+                              height: Math.floor(20 * 2 * screenSizeFactor),
+                              width: Math.floor(20 * 2 * screenSizeFactor + 2),
+                              marginRight: 7,
+                           }}
+                        />
+                     ) : (
+                        <i
+                           className={skill.icon}
+                           style={{
+                              fontSize: Math.floor(20 * 2 * screenSizeFactor),
+                              marginRight: 7,
+                              color: skill.color,
+                           }}
+                        />
+                     )}
+                     <div
+                        style={{
+                           marginTop: 2,
+                           fontWeight: '400',
+                           fontSize: Math.floor(14 + 2 * screenSizeFactor),
+                        }}
+                     >
+                        {skill.name}
+                     </div>
+                  </div>
                )}
-               <div
-                  style={{
-                     marginTop: 2,
-                     fontWeight: '400',
-                     fontSize: Math.floor(14 + 2 * screenSizeFactor),
-                  }}
-               >
-                  {skill.name}
-               </div>
-            </div>
-            //    )}
-            // </Motion>
+            </Motion>
          );
       };
 
