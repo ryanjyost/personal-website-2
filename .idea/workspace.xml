@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f53c0f10-174e-4a3f-bac3-f93adf139413" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/pages/resume.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/resume.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/skills.js" afterDir="false" />
-    </list>
+    <list default="true" id="f53c0f10-174e-4a3f-bac3-f93adf139413" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +26,8 @@
       <file leaf-file-name="resume.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/resume.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+            <state relative-caret-position="340">
+              <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" />
                 <element signature="e#315#394#0" />
@@ -66,15 +63,15 @@
       <find>f7f7f7</find>
       <find>writing</find>
       <find>articles</find>
-      <find />
-      <find />
+      <find>padding: '5px 0px'</find>
+      <find>borderTop: '1px solid #e5e5e5',</find>
       <find>isFirstPath</find>
       <find>desc</find>
     </findStrings>
     <replaceStrings>
       <replace>showSidebarWide</replace>
       <replace>writing</replace>
-      <replace />
+      <replace>padding: '8px 0px'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -203,15 +200,15 @@
       <workItem from="1528411979678" duration="345000" />
       <workItem from="1528412354725" duration="8378000" />
       <workItem from="1528571645567" duration="62441000" />
-      <workItem from="1528948775448" duration="2551000" />
+      <workItem from="1528948775448" duration="2552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76213000" />
+    <option name="totallyTimeSpent" value="76214000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="89" y="114" width="1280" height="778" extended-state="0" />
+    <frame x="2" y="23" width="1280" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -570,8 +567,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/resume.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+        <state relative-caret-position="340">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" />
             <element signature="e#315#394#0" />
