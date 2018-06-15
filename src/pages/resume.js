@@ -47,8 +47,8 @@ export default class ResumePage extends React.Component {
                      // flexDirection: 'column',
                      //alignItems: 'stretch',
                      padding: showSidebar
-                        ? '20px 10px 200px 70px'
-                        : '20px 10px 200px 10px',
+                        ? '20px 10px 50px 70px'
+                        : '20px 10px 50px 10px',
                      justifyContent: 'center',
                      overflow: 'scroll',
                      marginTop: style.top,
