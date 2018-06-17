@@ -14,7 +14,7 @@ export default class ResumePage extends React.Component {
    }
 
    render() {
-      const { data, showSidebar, height, width } = this.props;
+      const { data, showSidebar, height, width, isMobile } = this.props;
       const { hover } = this.props;
 
       return (
@@ -50,8 +50,8 @@ export default class ResumePage extends React.Component {
                         ? '20px 10px 50px 70px'
                         : '20px 10px 50px 10px',
                      justifyContent: 'center',
-                     overflow: 'scroll',
-                     marginTop: style.top,
+                     // overflow: 'scroll',
+                     marginTop: isMobile ? 70 : style.top,
                      // position: 'relative',
                      // width: width,
                   }}

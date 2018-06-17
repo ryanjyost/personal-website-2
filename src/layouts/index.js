@@ -7,6 +7,8 @@ import Sidebar from '../components/Sidebar';
 import Header from '../components/header';
 import './index.css';
 
+import MobileDetect from 'mobile-detect';
+
 export default class Layout extends React.Component {
    constructor(props) {
       super(props);
@@ -44,6 +46,13 @@ export default class Layout extends React.Component {
       const sidebarWidth = showSidebarWide ? 200 : showSidebar ? 80 : 0;
 
       const isHome = location.pathname === '/';
+
+      const md =
+         window !== undefined
+            ? new MobileDetect(window.navigator.userAgent)
+            : null;
+
+      const isMobile = md ? md.mobile() : false;
 
       const images = {
          redux: data.redux,
@@ -118,7 +127,7 @@ export default class Layout extends React.Component {
                         ? {
                              margin: '0 auto',
                              height: '100vh',
-                             overflow: 'auto',
+                             // overflow: 'auto',
                              position: 'fixed',
                              top: 0,
                              left: sidebarWidth,
@@ -130,7 +139,7 @@ export default class Layout extends React.Component {
                              padding: '0px',
                              backgroundColor: '#f2f2f2',
                              height: '100vh',
-                             overflow: 'auto',
+                             //overflow: 'auto',
                              position: 'relative',
                              maxWidth: 1000,
                           }
@@ -155,7 +164,7 @@ export default class Layout extends React.Component {
                   </div>
                   {children({
                      ...this.props,
-                     ...{ images, showSidebar, height, width },
+                     ...{ images, showSidebar, height, width, isMobile },
                   })}
                </div>
 

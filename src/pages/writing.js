@@ -6,7 +6,7 @@ import { Motion, spring, presets } from 'react-motion';
 
 class WritingPage extends React.Component {
    render() {
-      const { data, showSidebar, width } = this.props;
+      const { data, showSidebar, width, isMobile } = this.props;
       const articles = [
          {
             name: 'Redux-Saga tutorial for beginners and dog lovers',
@@ -65,8 +65,8 @@ class WritingPage extends React.Component {
                      alignItems: 'stretch',
                      padding: '10px 10px 80px 10px',
                      justifyContent: 'center',
-                     overflow: 'auto',
-                     marginTop: style.top,
+                     // overflow: 'auto',
+                     marginTop: isMobile ? 70 : style.top,
                   }}
                >
                   {articles.map((article, i) => (

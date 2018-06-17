@@ -206,6 +206,8 @@ export default class Header extends React.Component {
          const renderButton = btn => {
             return (
                <a
+                  className={'contactBtn'}
+                  key={btn.text}
                   href={
                      btn.text === 'Resume' ? withPrefix('resume.pdf') : btn.link
                   }
@@ -213,8 +215,8 @@ export default class Header extends React.Component {
                      display: 'flex',
                      justifyContent: 'center',
                      alignItems: 'center',
-                     backgroundColor: '#fcfcfc',
-                     WebkitBoxShadow: '0 2px 4px #d8d8d8, 0 2px 2px #d8d8d8',
+                     backgroundColor: '#f2f2f2',
+                     // WebkitBoxShadow: '0 2px 4px #d8d8d8, 0 2px 2px #d8d8d8',
                      transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
                      border: '1px solid #f2f2f2',
                      padding: '5px 20px',
@@ -246,13 +248,14 @@ export default class Header extends React.Component {
                <div
                   style={{
                      fontSize: 20,
-                     color: '#fafafa',
                      // display: 'flex',
                      // alignItems: 'baseline',
                      // flexWrap: 'wrap',
                      // textAlign: 'justify',
                      letterSpacing: '0.02em',
-                     fontWeight: '300',
+                     fontWeight: '400',
+                     lineHeight: 1.5,
+                     color: '#f2f2f2',
                   }}
                >
                   <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -274,15 +277,44 @@ export default class Header extends React.Component {
                   </div>
                   <div style={{ marginTop: 5 }}>
                      I'm a{' '}
-                     <strong style={{ fontSize: 22 }}>web developer</strong>{' '}
+                     <strong
+                        style={{
+                           fontSize: 24,
+                           fontWeight: 'bold',
+                           color: '#fff',
+                        }}
+                     >
+                        web developer
+                     </strong>{' '}
                      who's all about creating unique, responsive{' '}
-                     <strong style={{ fontSize: 22 }}>web apps</strong>, rooted
-                     in fundamental{' '}
-                     <strong style={{ fontSize: 22 }}>
+                     <strong
+                        style={{
+                           fontSize: 24,
+                           fontWeight: 'bold',
+                           color: '#fff',
+                        }}
+                     >
+                        web apps
+                     </strong>, rooted in fundamental{' '}
+                     <strong
+                        style={{
+                           fontSize: 24,
+                           fontWeight: 'bold',
+                           color: '#fff',
+                        }}
+                     >
                         UI design principles
                      </strong>{' '}
                      and built with{' '}
-                     <strong style={{ fontSize: 22 }}>modern tech</strong>.
+                     <strong
+                        style={{
+                           fontSize: 24,
+                           fontWeight: 'bold',
+                           color: '#fff',
+                        }}
+                     >
+                        modern tech
+                     </strong>.
                   </div>
                   <div
                      style={{
@@ -431,6 +463,7 @@ export default class Header extends React.Component {
                         zIndex: 1300,
                         padding: showSidebar ? '0px 70px' : '0px 25px',
                         fontSize: 18,
+                        color: '#d8d8d8',
                      }}
                   >
                      <i

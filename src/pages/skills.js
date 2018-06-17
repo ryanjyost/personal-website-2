@@ -5,7 +5,7 @@ import { Motion, spring, presets } from 'react-motion';
 
 export default class SkillsPage extends React.Component {
    render() {
-      const { images, showSidebar, location } = this.props;
+      const { images, showSidebar, location, isMobile } = this.props;
 
       const skills = [
          {
@@ -249,7 +249,7 @@ export default class SkillsPage extends React.Component {
                         borderRadius: 5,
                         color: '#666',
                         letterSpacing: '0.02em',
-                        marginTop: -style.top,
+                        marginTop: isMobile ? 0 : -style.top,
                      }}
                   >
                      {skill.isFile ? (
@@ -295,7 +295,7 @@ export default class SkillsPage extends React.Component {
                alignItems: 'stretch',
                // justifyContent: 'center',
                marginTop: showSidebar ? 70 : 70,
-               overflow: 'scroll',
+               //overflow: 'scroll',
             }}
          >
             <h6

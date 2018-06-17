@@ -156,11 +156,11 @@ a:hover, a:focus, a:active {
 
 #mainContainer {
   font-family: 'Lato', sans-serif;
-  overflow: scroll;
+  /*overflow: scroll; */
 }
 
 #content {
-  overflow-y: scroll;
+   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   height:100%; /*A value other than height:auto needs to be set*/
   font-family: 'Lato', sans-serif;
@@ -172,4 +172,10 @@ a:hover, a:focus, a:active {
 
 #homeBtn:hover {
   color: #333746 !important;
+}
+
+.contactBtn:hover {
+  color: #333746 !important;
+  background-color: #fff !important;
+  border: 1px solid #333746 !important;
 }

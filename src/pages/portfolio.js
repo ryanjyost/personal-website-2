@@ -6,7 +6,7 @@ import { Motion, spring, presets } from 'react-motion';
 
 class PortfolioPage extends React.Component {
    render() {
-      const { data, showSidebar, height, width } = this.props;
+      const { data, showSidebar, height, width, isMobile } = this.props;
       const projects = [
          {
             name: 'The Daily Gray',
@@ -49,7 +49,7 @@ class PortfolioPage extends React.Component {
                'A Node.js program that screenshots and scrapes links from dozens of news sites. It uploads the images to a' +
                ' CDN' +
                ' and saves the scraped data and CDN response to a MongoDB database.',
-            preview: data.simpleStorage.sizes,
+            preview: data.scraper.sizes,
             skills: [
                'Node.js',
                'Express',
@@ -57,10 +57,10 @@ class PortfolioPage extends React.Component {
                'Async/Await',
                'Puppeteer',
             ],
-            github: 'https://github.com/ryanjyost/react-simple-storage',
-            link:
-               'https://ryanjyost.github.io/react-simple-storage-example-project/',
-            npm: 'https://www.npmjs.com/package/react-simple-storage',
+            github: 'https://github.com/ryanjyost/news-sites-scraper',
+            // link:
+            //    'https://ryanjyost.github.io/react-simple-storage-example-project/',
+            // npm: 'https://www.npmjs.com/package/react-simple-storage',
          },
          {
             name: 'First Job Finance',
@@ -168,8 +168,8 @@ class PortfolioPage extends React.Component {
                      alignItems: 'stretch',
                      padding: '10px 10px 80px 10px',
                      justifyContent: 'center',
-                     overflow: 'auto',
-                     marginTop: style.top,
+                     // overflow: 'auto',
+                     marginTop: isMobile ? 70 : style.top,
                   }}
                >
                   {projects.map((project, i) => (
@@ -233,6 +233,12 @@ export const query = graphql`
          }
       }
       personal1: imageSharp(id: { regex: "/personal1-preview/" }) {
+         sizes(maxWidth: 630) {
+            ...GatsbyImageSharpSizes
+         }
+      }
+
+      scraper: imageSharp(id: { regex: "/scraper-preview/" }) {
          sizes(maxWidth: 630) {
             ...GatsbyImageSharpSizes
          }
