@@ -243,7 +243,7 @@ export default class SkillsPage extends React.Component {
                         alignItems: 'center',
                         //justifyContent: 'space-between',
                         WebkitBoxShadow:
-                           '1px 7px 13px -11px rgba(136,136,136,1)',
+                           '1px 7px 6px -11px rgba(136,136,136,1)',
                         padding: '10px 15px',
                         border: '1px solid #f2f2f2',
                         borderRadius: 5,

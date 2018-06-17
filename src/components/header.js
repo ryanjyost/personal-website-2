@@ -222,7 +222,7 @@ export default class Header extends React.Component {
                      border: '1px solid #f2f2f2',
                      padding: '5px 20px',
                      borderRadius: 50,
-                     fontSize: 16,
+                     fontSize: isMobile ? 14 : 16,
                      color: '#333746',
                      fontWeight: '400',
                      letterSpacing: '0.02em',
@@ -232,7 +232,7 @@ export default class Header extends React.Component {
                >
                   <i
                      className={btn.icon}
-                     style={{ marginRight: 10, fontSize: 20 }}
+                     style={{ marginRight: 10, fontSize: isMobile ? 18 : 20 }}
                   />
                   {btn.text}
                </a>
@@ -259,7 +259,12 @@ export default class Header extends React.Component {
                      color: '#f2f2f2',
                   }}
                >
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <div
+                     style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                     }}
+                  >
                      <Img
                         title="Headshot"
                         alt="Ryan Yost Headshot"
@@ -281,11 +286,11 @@ export default class Header extends React.Component {
                         Hi, I'm Ryan.&nbsp;
                      </span>{' '}
                   </div>
-                  <div style={{ marginTop: 5 }}>
+                  <div style={{ marginTop: 5, fontSize: isMobile ? 16 : 20 }}>
                      I'm a{' '}
                      <strong
                         style={{
-                           fontSize: 24,
+                           fontSize: isMobile ? 20 : 24,
                            fontWeight: 'bold',
                            color: '#fff',
                         }}
@@ -295,7 +300,7 @@ export default class Header extends React.Component {
                      who's all about creating unique, responsive{' '}
                      <strong
                         style={{
-                           fontSize: 24,
+                           fontSize: isMobile ? 20 : 24,
                            fontWeight: 'bold',
                            color: '#fff',
                         }}
@@ -304,7 +309,7 @@ export default class Header extends React.Component {
                      </strong>, rooted in fundamental{' '}
                      <strong
                         style={{
-                           fontSize: 24,
+                           fontSize: isMobile ? 20 : 24,
                            fontWeight: 'bold',
                            color: '#fff',
                         }}
@@ -314,7 +319,7 @@ export default class Header extends React.Component {
                      and built with{' '}
                      <strong
                         style={{
-                           fontSize: 24,
+                           fontSize: isMobile ? 20 : 24,
                            fontWeight: 'bold',
                            color: '#fff',
                         }}
