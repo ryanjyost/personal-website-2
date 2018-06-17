@@ -56,6 +56,19 @@ export default class ResumePage extends React.Component {
                      // width: width,
                   }}
                >
+                  {/*<div style={{ maxWidth: 600 }}>*/}
+                  {/*I started working at a financial advisory firm in Chicago*/}
+                  {/*right after graduation, in the summer of 2015.<br />*/}
+                  {/*Not long after, I began to build a Wordpress site to share*/}
+                  {/*and discuss interesting articles, books and podcasts with*/}
+                  {/*my virtual book club. I became absolutely enthralled with*/}
+                  {/*customizing the design, implementing knew functionality and*/}
+                  {/*simply building something from nothing.<br />*/}
+                  {/*After a couple years built a portfolio of fun and*/}
+                  {/*challenging projects, learning as much as I could along the*/}
+                  {/*way. I also became a CERTIFIED FINANCIAL PLANNER&#8482;*/}
+                  {/*certificant.*/}
+                  {/*</div>*/}
                   {/* Download */}
                   <div
                      style={{

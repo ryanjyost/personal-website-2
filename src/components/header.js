@@ -160,7 +160,9 @@ export default class Header extends React.Component {
          }
       }
 
-      this.setState({ isFirstPath: false });
+      if (this.props.location.pathname !== path) {
+         this.setState({ isFirstPath: false });
+      }
    }
 
    render() {
@@ -202,6 +204,8 @@ export default class Header extends React.Component {
             icon: 'fas fa-cloud-download-alt',
          },
       ];
+
+      console.log(this.state.isFirstPath, isHome);
 
       const renderHome = () => {
          const renderButton = btn => {
@@ -373,7 +377,10 @@ export default class Header extends React.Component {
                <div style={{ position: 'fixed', zIndex: 1000 }}>
                   <div
                      style={{
-                        height: style.height,
+                        height:
+                           this.state.isFirstPath && isHome
+                              ? '100vh'
+                              : style.height,
                         position: 'relative',
                         width: width,
                         display: 'flex',
