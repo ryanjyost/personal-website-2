@@ -172,6 +172,7 @@ export default class Header extends React.Component {
          height,
          width,
          location,
+         isMobile,
       } = this.props;
       const { didMount } = this.state;
       const currentPath = location.pathname;
@@ -264,14 +265,19 @@ export default class Header extends React.Component {
                         alt="Ryan Yost Headshot"
                         sizes={headshot.sizes}
                         style={{
-                           height: 70,
-                           width: 70,
+                           height: isMobile ? 50 : 70,
+                           width: isMobile ? 50 : 70,
                            borderRadius: '9999px',
                            border: '2px solid #A1DEDA',
                            marginRight: 15,
                         }}
                      />
-                     <span style={{ fontSize: 36, fontWeight: 'bold' }}>
+                     <span
+                        style={{
+                           fontSize: isMobile ? 26 : 36,
+                           fontWeight: 'bold',
+                        }}
+                     >
                         Hi, I'm Ryan.&nbsp;
                      </span>{' '}
                   </div>

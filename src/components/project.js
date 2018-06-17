@@ -97,9 +97,9 @@ export default class Project extends React.Component {
                   <div
                      style={{
                         fontSize: 15,
-                        fontWeight: 200,
+                        fontWeight: '400',
                         padding: '5px 0px 15px 0px',
-                        color: '#555',
+                        color: '#888',
                         textDecoration: 'none',
                         lineHeight: 1.2,
                         letterSpacing: '0.02em',

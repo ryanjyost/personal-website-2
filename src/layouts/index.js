@@ -160,6 +160,7 @@ export default class Layout extends React.Component {
                         height={height}
                         width={width}
                         location={this.props.location}
+                        isMobile={isMobile}
                      />
                   </div>
                   {children({

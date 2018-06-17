@@ -93,7 +93,7 @@ export default class Article extends React.Component {
                   <div
                      style={{
                         fontSize: 15,
-                        fontWeight: 200,
+                        fontWeight: '400',
                         padding: '5px 0px 15px 0px',
                         color: '#888',
                         textDecoration: 'none',
