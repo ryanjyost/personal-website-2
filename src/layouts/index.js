@@ -48,7 +48,7 @@ export default class Layout extends React.Component {
       const isHome = location.pathname === '/';
 
       const md =
-         window !== undefined
+         typeof window !== 'undefined'
             ? new MobileDetect(window.navigator.userAgent)
             : null;
 
