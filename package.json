@@ -7,6 +7,8 @@
     "gatsby": "^1.9.247",
     "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.40",
+    "gatsby-plugin-favicon": "^2.1.1",
+    "gatsby-plugin-netlify": "^1.0.21",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sharp": "^1.6.46",
     "gatsby-source-filesystem": "^1.5.38",
@@ -16,7 +18,8 @@
     "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
-    "react-motion": "^0.5.2"
+    "react-motion": "^0.5.2",
+    "react-simple-storage": "^1.1.1"
   },
   "keywords": [
     "gatsby"

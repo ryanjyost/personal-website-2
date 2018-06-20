@@ -6,6 +6,24 @@ module.exports = {
       'gatsby-plugin-react-helmet',
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
+      // {
+      //    resolve: `gatsby-plugin-favicon`,
+      //    options: {
+      //       logo: './src/favicon.png',
+      //       injectHTML: true,
+      //       icons: {
+      //          android: false,
+      //          appleIcon: false,
+      //          appleStartup: false,
+      //          coast: false,
+      //          favicons: true,
+      //          firefox: false,
+      //          twitter: false,
+      //          yandex: false,
+      //          windows: false,
+      //       },
+      //    },
+      // },
       {
          resolve: `gatsby-source-filesystem`,
          options: {
@@ -27,5 +45,6 @@ module.exports = {
             name: 'images',
          },
       },
+      `gatsby-plugin-netlify`, // make sure to put last in the array
    ],
 };

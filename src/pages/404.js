@@ -1,10 +1,24 @@
-import React from 'react'
+import React from 'react';
 
 const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
-)
+   <div
+      style={{
+         display: 'flex',
+         flexDirection: 'column',
+         justifyContent: 'center',
+         height: '100vh',
+         paddingLeft: 50,
+      }}
+   >
+      <div style={{ display: 'flex', alignItems: 'baseline' }}>
+         <h1>Uh oh...</h1>
+         <i
+            className={'far fa-frown'}
+            style={{ fontSize: 50, marginLeft: 10 }}
+         />
+      </div>
+      <h5>You hit a route that doesn&#39;t exist.</h5>
+   </div>
+);
 
-export default NotFoundPage
+export default NotFoundPage;
