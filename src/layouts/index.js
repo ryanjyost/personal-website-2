@@ -16,7 +16,6 @@ export default class Layout extends React.Component {
       this.state = {
          width: 0,
          height: 0,
-         loading: true,
       };
 
       this.loader = null;
@@ -32,13 +31,6 @@ export default class Layout extends React.Component {
    componentDidMount() {
       this.updateDimensions();
       window.addEventListener('resize', this.updateDimensions.bind(this));
-      this.loader = setTimeout(
-         function() {
-            this.setState({ loading: false });
-            console.log('hey');
-         }.bind(this),
-         0
-      );
    }
 
    /**
@@ -77,126 +69,122 @@ export default class Layout extends React.Component {
          meteor: data.meteor,
       };
 
-      if (this.state.loading) {
-         return <h1>hey</h1>;
-      } else {
-         return (
+      return (
+         <div
+            id={'mainContainer'}
+            style={{
+               //height: '100vh',
+               // overflow: 'hidden',
+               backgroundColor: '#f2f2f2',
+               margin: 'auto',
+            }}
+         >
+            <Helmet
+               title={'Ryan J. Yost'}
+               meta={[
+                  { name: 'description', content: 'Sample' },
+                  { name: 'keywords', content: 'sample, something' },
+               ]}
+            >
+               <link
+                  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                  rel="stylesheet"
+               />
+               <link
+                  rel="stylesheet"
+                  href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+                  integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+                  crossOrigin="anonymous"
+               />
+               <link
+                  rel="stylesheet"
+                  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+                  // integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+                  crossOrigin="anonymous"
+               />
+               <link
+                  href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+                  rel="stylesheet"
+               />
+               <link rel="shortcut icon" type="image/png" href={favicon} />
+            </Helmet>
             <div
-               id={'mainContainer'}
                style={{
-                  //height: '100vh',
-                  // overflow: 'hidden',
-                  backgroundColor: '#f2f2f2',
                   margin: 'auto',
+                  backgroundColor: '#f2f2f2',
+                  width: '100%',
                }}
             >
-               <Helmet
-                  title={'Ryan J. Yost'}
-                  meta={[
-                     { name: 'description', content: 'Sample' },
-                     { name: 'keywords', content: 'sample, something' },
-                  ]}
-               >
-                  <link
-                     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-                     rel="stylesheet"
+               {showSidebar && (
+                  <Sidebar
+                     isHome={isHome}
+                     showSidebar={showSidebar}
+                     sidebarWidth={sidebarWidth}
+                     width={width}
+                     showSidebarWide={showSidebarWide}
                   />
-                  <link
-                     rel="stylesheet"
-                     href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-                     integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-                     crossOrigin="anonymous"
-                  />
-                  <link
-                     rel="stylesheet"
-                     href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-                     // integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-                     crossOrigin="anonymous"
-                  />
-                  <link
-                     href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
-                     rel="stylesheet"
-                  />
-                  <link rel="shortcut icon" type="image/png" href={favicon} />
-               </Helmet>
+               )}
+
                <div
-                  style={{
-                     margin: 'auto',
-                     backgroundColor: '#f2f2f2',
-                     width: '100%',
-                  }}
+                  id={'content'}
+                  style={
+                     showSidebar
+                        ? {
+                             margin: '0 auto',
+                             height: '100vh',
+                             // overflow: 'auto',
+                             position: 'fixed',
+                             top: 0,
+                             left: sidebarWidth,
+                             width: 'auto',
+                             backgroundColor: '#f2f2f2',
+                          }
+                        : {
+                             margin: '0 auto',
+                             padding: '0px',
+                             backgroundColor: '#f2f2f2',
+                             height: '100vh',
+                             //overflow: 'auto',
+                             position: 'relative',
+                             maxWidth: 1000,
+                          }
+                  }
                >
-                  {showSidebar && (
-                     <Sidebar
-                        isHome={isHome}
-                        showSidebar={showSidebar}
-                        sidebarWidth={sidebarWidth}
-                        width={width}
-                        showSidebarWide={showSidebarWide}
-                     />
-                  )}
-
                   <div
-                     id={'content'}
-                     style={
-                        showSidebar
-                           ? {
-                                margin: '0 auto',
-                                height: '100vh',
-                                // overflow: 'auto',
-                                position: 'fixed',
-                                top: 0,
-                                left: sidebarWidth,
-                                width: 'auto',
-                                backgroundColor: '#f2f2f2',
-                             }
-                           : {
-                                margin: '0 auto',
-                                padding: '0px',
-                                backgroundColor: '#f2f2f2',
-                                height: '100vh',
-                                //overflow: 'auto',
-                                position: 'relative',
-                                maxWidth: 1000,
-                             }
-                     }
+                     style={{
+                        backgroundColor: '#f2f2f2',
+                        position: 'relative',
+                        maxWidth: 1000,
+                     }}
                   >
-                     <div
-                        style={{
-                           backgroundColor: '#f2f2f2',
-                           position: 'relative',
-                           maxWidth: 1000,
-                        }}
-                     >
-                        <Header
-                           headshot={this.props.data.headshot}
-                           showSidebar={showSidebar}
-                           showSidebarWide={showSidebarWide}
-                           isHome={isHome}
-                           height={height}
-                           width={width}
-                           location={this.props.location}
-                           isMobile={isMobile}
-                        />
-                     </div>
-                     {children({
-                        ...this.props,
-                        ...{ images, showSidebar, height, width, isMobile },
-                     })}
-                  </div>
-
-                  {!showSidebar && (
-                     <Menu
+                     <Header
                         headshot={this.props.data.headshot}
-                        isHome={isHome}
                         showSidebar={showSidebar}
+                        showSidebarWide={showSidebarWide}
+                        isHome={isHome}
+                        height={height}
                         width={width}
+                        location={this.props.location}
+                        isMobile={isMobile}
                      />
-                  )}
+                  </div>
+                  {children({
+                     ...this.props,
+                     ...{ images, showSidebar, height, width, isMobile },
+                  })}
                </div>
+
+               {!showSidebar && (
+                  <Menu
+                     headshot={this.props.data.headshot}
+                     isHome={isHome}
+                     showSidebar={showSidebar}
+                     width={width}
+                  />
+               )}
             </div>
-         );
-      }
+         </div>
+      );
    }
 }
 
