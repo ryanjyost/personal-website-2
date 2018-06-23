@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import favicon from '../favicon.png';
+import { Motion, spring, presets } from 'react-motion';
 
 import Menu from '../components/Menu';
 import Sidebar from '../components/Sidebar';
@@ -16,6 +17,7 @@ export default class Layout extends React.Component {
       this.state = {
          width: 0,
          height: 0,
+         loading: true,
       };
 
       this.loader = null;
@@ -31,6 +33,12 @@ export default class Layout extends React.Component {
    componentDidMount() {
       this.updateDimensions();
       window.addEventListener('resize', this.updateDimensions.bind(this));
+      this.loader = setTimeout(
+         function() {
+            this.setState({ loading: false });
+         }.bind(this),
+         500
+      );
    }
 
    /**
@@ -79,6 +87,27 @@ export default class Layout extends React.Component {
                margin: 'auto',
             }}
          >
+            <Motion
+               defaultStyle={{ opacity: 1, zIndex: 2000 }}
+               style={{
+                  opacity: spring(this.state.loading ? 1 : 0),
+                  zIndex: spring(this.state.loading ? 2000 : -1),
+               }}
+            >
+               {style => (
+                  <div
+                     style={{
+                        zIndex: style.zIndex,
+                        opacity: style.opacity,
+                        backgroundColor: '#43B2AA',
+                        width: '100%',
+                        height: '100vh',
+                        position: 'absolute',
+                     }}
+                  />
+               )}
+            </Motion>
+
             <Helmet
                title={'Ryan J. Yost'}
                meta={[
