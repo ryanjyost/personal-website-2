@@ -25,7 +25,7 @@ export default class Menu extends Component {
          flexDirection: 'row',
          justifyContent: 'center',
          alignItems: 'center',
-         color: '#a4a4a4',
+         color: 'rgba(255, 255, 255, 0.8)',
          textDecoration: 'none',
          borderTop: '3px solid #333746',
          paddingBottom: 3,

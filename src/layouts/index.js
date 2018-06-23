@@ -103,8 +103,19 @@ export default class Layout extends React.Component {
                         width: '100%',
                         height: '100vh',
                         position: 'absolute',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                      }}
-                  />
+                  >
+                     <i
+                        className={'fas fa-spinner fa-pulse'}
+                        style={{
+                           fontSize: 50,
+                           color: 'rgba(255, 255, 255, 0.7)',
+                        }}
+                     />
+                  </div>
                )}
             </Motion>
 

@@ -41,10 +41,6 @@ export default class Project extends React.Component {
                   ? '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
                   : '0 2px 4px rgba(0,0,0,0.05), 0 0px 0px rgba(0,0,0,0.22)',
                transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
-               // border: '2px solid #f2f2f2',
-               borderBottom: 'none',
-               border: '1px solid #f2f2f2',
-               // borderRadius: 5,
                backgroundColor: '#fff',
                width: projectWidth,
                minWidth: 300,
@@ -129,7 +125,7 @@ export default class Project extends React.Component {
                                  // WebkitBoxShadow:
                                  //   '1px 7px 13px -11px rgba(136,136,136,1)',
                                  padding: '5px 7px 5px 7px',
-                                 // borderRadius: 5,
+                                 borderRadius: 3,
                                  color: '#666',
                                  letterSpacing: '0.02em',
                                  fontSize: 14,
@@ -150,8 +146,6 @@ export default class Project extends React.Component {
                   position: 'absolute',
                   width: '100%',
                   bottom: 0,
-                  border: '1px solid #fcfcfc',
-                  borderBottom: 'none',
                   borderTop: '1px solid #eee',
                }}
             >

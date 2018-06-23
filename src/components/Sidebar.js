@@ -27,7 +27,7 @@ export default class Sidebar extends Component {
       const inactiveButtonStyle = {
          padding: showSidebarWide ? '12px 20px 12px 30px' : '10px 0px',
          margin: showSidebarWide ? '0px' : '5px 0px',
-         color: '#a4a4a4',
+         color: 'rgba(255, 255, 255, 0.8)',
          width: '100%',
          fontWeight: '100',
          textAlign: showSidebar && !showSidebarWide ? 'center' : 'left',

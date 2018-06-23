@@ -205,8 +205,6 @@ export default class Header extends React.Component {
          },
       ];
 
-      console.log(this.state.isFirstPath, isHome);
-
       const renderHome = () => {
          const renderButton = btn => {
             return (
@@ -220,7 +218,7 @@ export default class Header extends React.Component {
                      display: 'flex',
                      justifyContent: 'center',
                      alignItems: 'center',
-                     backgroundColor: '#f2f2f2',
+                     backgroundColor: 'rgba(255, 255, 255, 0.95)',
                      // WebkitBoxShadow: '0 2px 4px #d8d8d8, 0 2px 2px #d8d8d8',
                      transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
                      border: '1px solid #f2f2f2',
@@ -253,14 +251,10 @@ export default class Header extends React.Component {
                <div
                   style={{
                      fontSize: 20,
-                     // display: 'flex',
-                     // alignItems: 'baseline',
-                     // flexWrap: 'wrap',
-                     // textAlign: 'justify',
                      letterSpacing: '0.02em',
                      fontWeight: '400',
                      lineHeight: 1.5,
-                     color: '#f2f2f2',
+                     color: 'rgba(255, 255, 255, 0.9)',
                   }}
                >
                   <div
@@ -301,7 +295,7 @@ export default class Header extends React.Component {
                      >
                         web developer
                      </strong>{' '}
-                     who's all about creating unique, responsive{' '}
+                     who's all about creating{' '}
                      <strong
                         style={{
                            fontSize: isMobile ? 20 : 24,
@@ -309,18 +303,9 @@ export default class Header extends React.Component {
                            color: '#fff',
                         }}
                      >
-                        web apps
-                     </strong>, rooted in fundamental{' '}
-                     <strong
-                        style={{
-                           fontSize: isMobile ? 20 : 24,
-                           fontWeight: 'bold',
-                           color: '#fff',
-                        }}
-                     >
-                        UI design principles
+                        unique, responsive
                      </strong>{' '}
-                     and built with{' '}
+                     web apps, rooted in fundamental{' '}
                      <strong
                         style={{
                            fontSize: isMobile ? 20 : 24,
@@ -328,8 +313,18 @@ export default class Header extends React.Component {
                            color: '#fff',
                         }}
                      >
-                        modern tech
-                     </strong>.
+                        UI design
+                     </strong>{' '}
+                     principles and built with{' '}
+                     <strong
+                        style={{
+                           fontSize: isMobile ? 20 : 24,
+                           fontWeight: 'bold',
+                           color: '#fff',
+                        }}
+                     >
+                        modern tech.
+                     </strong>
                   </div>
                   <div
                      style={{
@@ -481,7 +476,7 @@ export default class Header extends React.Component {
                         zIndex: 1300,
                         padding: showSidebar ? '0px 70px' : '0px 25px',
                         fontSize: 18,
-                        color: '#d8d8d8',
+                        color: 'rgba(255, 255, 255, 0.8)',
                      }}
                   >
                      <i
