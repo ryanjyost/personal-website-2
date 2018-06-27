@@ -122,8 +122,11 @@ export default class Layout extends React.Component {
             <Helmet
                title={'Ryan J. Yost'}
                meta={[
-                  { name: 'description', content: 'Sample' },
-                  { name: 'keywords', content: 'sample, something' },
+                  {
+                     name: 'description',
+                     content: 'Personal portfolio website.',
+                  },
+                  { name: 'keywords', content: 'portfolio, web development' },
                ]}
             >
                <link
@@ -147,6 +150,33 @@ export default class Layout extends React.Component {
                   rel="stylesheet"
                />
                <link rel="shortcut icon" type="image/png" href={favicon} />
+               <meta property="og:url" content="http://www.ryanjyost.com/" />
+               <meta property="og:site_name" content="Ryan Yost's Portfolio" />
+               <meta property="og:type" content="website" />
+               <meta property="og:title" content="Ryan J. Yost" />
+               <meta
+                  property="og:description"
+                  content="A personal portfolio site for Ryan Yost."
+               />
+               <meta
+                  property="og:image"
+                  content="http://res.cloudinary.com/ryanjyost/image/upload/v1530136342/headshot.jpg"
+               />
+
+               <meta name="twitter:card" content="summary" />
+               <meta name="twitter:site" content="@ryanjyost" />
+               <meta
+                  name="twitter:title"
+                  content="Ryan J. Yost | Portfolio Site"
+               />
+               <meta
+                  name="twitter:description"
+                  content="Check out my projects, articles, skills, and experience."
+               />
+               <meta
+                  name="twitter:image"
+                  content="http://res.cloudinary.com/ryanjyost/image/upload/v1530136342/headshot.jpg"
+               />
             </Helmet>
             <div
                style={{
