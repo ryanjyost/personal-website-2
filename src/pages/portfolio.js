@@ -9,6 +9,23 @@ class PortfolioPage extends React.Component {
       const { data, showSidebar, height, width, isMobile } = this.props;
       const projects = [
          {
+            name: 'Newsbie',
+            desc:
+               'Navigate, analyze and understand the news media. (Using data from News Sites Scraper project)',
+            preview: data.newsbie.sizes,
+            skills: [
+               'React',
+               'Node.js',
+               'Hapi.js',
+               'Redis',
+               'MongoDB/Mongoose',
+               'Responsive Design',
+               'RESTful API',
+            ],
+            github: 'https://github.com/ryanjyost/newsbie',
+            link: 'https://newsbie.io',
+         },
+         {
             name: 'The Daily Gray',
             desc:
                'A web application that offers a better way to consume political news and opinions.',
@@ -74,8 +91,8 @@ class PortfolioPage extends React.Component {
                'Sass',
                'Responsive Design',
             ],
-            github: 'https://github.com/ryanjyost/the-daily-gray',
-            link: 'http://www.firstjobfinance.com/',
+            github: 'https://github.com/ryanjyost/first-job-finance',
+            link: 'https://first-job-finance.herokuapp.com',
          },
          {
             name: 'The Daily Gray Chrome Extension',
@@ -84,7 +101,7 @@ class PortfolioPage extends React.Component {
             preview: data.extension.sizes,
             skills: ['JavaScript', 'Google API', 'The Daily Gray API'],
             github: 'https://github.com/ryanjyost/stellar-account-dashboard',
-            link: 'https://stellar-account-data.herokuapp.com/',
+            //link: 'https://stellar-account-data.herokuapp.com/',
          },
          {
             name: '100DaysOfJournaling',
@@ -101,7 +118,7 @@ class PortfolioPage extends React.Component {
             preview: data.domEvents.sizes,
             skills: ['JavaScript', 'LocalStorage', 'Bootstrap'],
             github: 'https://github.com/ryanjyost/dom-events',
-            link: 'http://domevents.info/',
+            link: 'https://ryanjyost.github.io/dom-events/',
          },
          {
             name: 'Personal Website 1.0',
@@ -192,6 +209,11 @@ export default PortfolioPage;
 
 export const query = graphql`
    query ProjectQuery {
+      newsbie: imageSharp(id: { regex: "/newsbie-preview/" }) {
+         sizes(maxWidth: 630) {
+            ...GatsbyImageSharpSizes
+         }
+      }
       dailygray: imageSharp(id: { regex: "/the-daily-gray-preview/" }) {
          sizes(maxWidth: 630) {
             ...GatsbyImageSharpSizes
