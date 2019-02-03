@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+
 import Link from 'gatsby-link';
 import { withPrefix } from 'gatsby-link';
 import Project from '../components/project';
@@ -80,7 +80,7 @@ export default class ResumePage extends React.Component {
                      // onMouseLeave={() => this.setState({ hover: false })}
                   >
                      <a
-                        href={withPrefix('resume.pdf')}
+                        href={withPrefix('ryanjyost_resume.pdf')}
                         style={{
                            display: 'flex',
                            justifyContent: 'center',

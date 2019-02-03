@@ -66,6 +66,7 @@ export default class Layout extends React.Component {
       const isMobile = md ? md.mobile() : false;
 
       const images = {
+         headshot: data.headshot,
          redux: data.redux,
          ember: data.ember,
          jquery: data.jquery,
