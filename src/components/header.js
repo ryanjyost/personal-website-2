@@ -212,7 +212,9 @@ export default class Header extends React.Component {
                   className={'contactBtn'}
                   key={btn.text}
                   href={
-                     btn.text === 'Resume' ? withPrefix('resume.pdf') : btn.link
+                     btn.text === 'Resume'
+                        ? withPrefix('ryanjyost_resume.pdf')
+                        : btn.link
                   }
                   style={{
                      display: 'flex',
