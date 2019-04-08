@@ -19,6 +19,16 @@ class WritingPage extends React.Component {
          },
          {
             name:
+               'How to build fully responsive React apps with nothing but inline styles and JavaScript',
+            desc:
+               'A tutorial for devs sick of chaotic stylesheets and media queries.',
+            preview: data.responsive.sizes,
+
+            link:
+               'https://medium.com/@ryanjyost/how-to-build-fully-responsive-react-apps-with-nothing-but-inline-styles-and-javascript-242c091b6ba1',
+         },
+         {
+            name:
                'How to take advantage of Local Storage in your React projects',
             desc: 'And why you ought to.',
             preview: data.localstorage.sizes,
@@ -83,7 +93,13 @@ export default WritingPage;
 
 export const query = graphql`
    query ArticleQuery {
-      reduxsaga: imageSharp(id: { regex: "/saga-tutorial-preview/" }) {
+      reduxsaga: imageSharp(id: { regex: "/reduxsaga/" }) {
+         sizes(maxWidth: 630) {
+            ...GatsbyImageSharpSizes
+         }
+      }
+
+      responsive: imageSharp(id: { regex: "/responsive-react/" }) {
          sizes(maxWidth: 630) {
             ...GatsbyImageSharpSizes
          }

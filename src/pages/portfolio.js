@@ -26,6 +26,14 @@ class PortfolioPage extends React.Component {
             link: 'https://newsbie.io',
          },
          {
+            name: 'DepChecker',
+            desc: `Audit your project's NPM dependencies and export the report as a CSV file.`,
+            preview: data.depchecker.sizes,
+            skills: ['React', 'Node.js', 'Web Sockets', 'Socket.io', 'AWS'],
+            github: 'https://github.com/ryanjyost/depchecker',
+            link: 'https://depchecker.com/',
+         },
+         {
             name: 'The Daily Gray',
             desc:
                'A web application that offers a better way to consume political news and opinions.',
@@ -215,6 +223,11 @@ export const query = graphql`
          }
       }
       dailygray: imageSharp(id: { regex: "/the-daily-gray-preview/" }) {
+         sizes(maxWidth: 630) {
+            ...GatsbyImageSharpSizes
+         }
+      }
+      depchecker: imageSharp(id: { regex: "/depchecker/" }) {
          sizes(maxWidth: 630) {
             ...GatsbyImageSharpSizes
          }
