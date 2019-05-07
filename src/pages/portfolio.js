@@ -108,8 +108,7 @@ class PortfolioPage extends React.Component {
                'A chrome extension used to rate, curate and submit content to The Daily Gray.',
             preview: data.extension.sizes,
             skills: ['JavaScript', 'Google API', 'The Daily Gray API'],
-            github: 'https://github.com/ryanjyost/stellar-account-dashboard',
-            //link: 'https://stellar-account-data.herokuapp.com/',
+            github: 'https://github.com/ryanjyost/the-daily-gray-extension',
          },
          {
             name: '100DaysOfJournaling',
