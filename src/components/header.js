@@ -169,12 +169,10 @@ export default class Header extends React.Component {
       const {
          headshot,
          showSidebar,
-         showSidebarWide,
          isHome,
          height,
          width,
          location,
-         isMobile,
       } = this.props;
       const { didMount } = this.state;
       const currentPath = location.pathname;
@@ -204,148 +202,6 @@ export default class Header extends React.Component {
             icon: 'fas fa-cloud-download-alt',
          },
       ];
-
-      const renderHome = () => {
-         const renderButton = btn => {
-            return (
-               <a
-                  className={'contactBtn'}
-                  key={btn.text}
-                  href={
-                     btn.text === 'Resume'
-                        ? withPrefix('ryanjyost_resume.pdf')
-                        : btn.link
-                  }
-                  style={{
-                     display: 'flex',
-                     justifyContent: 'center',
-                     alignItems: 'center',
-                     backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                     // WebkitBoxShadow: '0 2px 4px #d8d8d8, 0 2px 2px #d8d8d8',
-                     transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
-                     border: '1px solid #f2f2f2',
-                     padding: '5px 20px',
-                     borderRadius: 50,
-                     fontSize: isMobile ? 14 : 16,
-                     color: '#333746',
-                     fontWeight: '400',
-                     letterSpacing: '0.02em',
-                     margin: '10px 10px',
-                  }}
-                  download={btn.download}
-               >
-                  <i
-                     className={btn.icon}
-                     style={{ marginRight: 10, fontSize: isMobile ? 18 : 20 }}
-                  />
-                  {btn.text}
-               </a>
-            );
-         };
-         return (
-            <div
-               style={{
-                  padding: showSidebar ? '0px 50px' : '0px 10px',
-                  marginBottom: 100,
-                  maxWidth: 700,
-               }}
-            >
-               <div
-                  style={{
-                     fontSize: 20,
-                     letterSpacing: '0.02em',
-                     fontWeight: '400',
-                     lineHeight: 1.5,
-                     color: 'rgba(255, 255, 255, 0.9)',
-                  }}
-               >
-                  <div
-                     style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                     }}
-                  >
-                     <Img
-                        title="Headshot"
-                        alt="Ryan Yost Headshot"
-                        sizes={headshot.sizes}
-                        style={{
-                           height: isMobile ? 50 : 70,
-                           width: isMobile ? 50 : 70,
-                           borderRadius: '9999px',
-                           border: '2px solid #A1DEDA',
-                           marginRight: 15,
-                        }}
-                     />
-                     <span
-                        style={{
-                           fontSize: isMobile ? 26 : 36,
-                           fontWeight: 'bold',
-                        }}
-                     >
-                        Hi, I'm Ryan.&nbsp;
-                     </span>{' '}
-                  </div>
-                  <div style={{ marginTop: 5, fontSize: isMobile ? 16 : 20 }}>
-                     I'm a{' '}
-                     <strong
-                        style={{
-                           fontSize: isMobile ? 20 : 24,
-                           fontWeight: 'bold',
-                           color: '#fff',
-                        }}
-                     >
-                        web developer
-                     </strong>{' '}
-                     who's all about creating{' '}
-                     <strong
-                        style={{
-                           fontSize: isMobile ? 20 : 24,
-                           fontWeight: 'bold',
-                           color: '#fff',
-                        }}
-                     >
-                        unique, responsive
-                     </strong>{' '}
-                     web apps, rooted in fundamental{' '}
-                     <strong
-                        style={{
-                           fontSize: isMobile ? 20 : 24,
-                           fontWeight: 'bold',
-                           color: '#fff',
-                        }}
-                     >
-                        UI design
-                     </strong>{' '}
-                     principles and built with{' '}
-                     <strong
-                        style={{
-                           fontSize: isMobile ? 20 : 24,
-                           fontWeight: 'bold',
-                           color: '#fff',
-                        }}
-                     >
-                        modern tech.
-                     </strong>
-                  </div>
-                  <div
-                     style={{
-                        marginTop: 30,
-                        display: 'flex',
-                        alignItems: 'center',
-                        flexWrap: 'wrap',
-                     }}
-                  >
-                     {buttons.map(btn => {
-                        return renderButton(btn);
-                     })}
-                  </div>
-               </div>
-               {/*Seamlessly responsive web design <br /> pulsating arrows to next*/}
-               {/*section, contact icons in sidebar*/}
-            </div>
-         );
-      };
 
       if (isHome) {
          return null;

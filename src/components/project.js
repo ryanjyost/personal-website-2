@@ -48,6 +48,7 @@ export default class Project extends React.Component {
                cursor: 'pointer',
                position: 'relative',
                paddingBottom: 30,
+               border: '2px solid #e5e5e5',
             }}
             onMouseEnter={() => this.setState({ hover: true })}
             onMouseLeave={() => this.setState({ hover: false })}

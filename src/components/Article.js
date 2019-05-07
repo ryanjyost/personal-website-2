@@ -42,7 +42,6 @@ export default class Article extends React.Component {
                transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
                // border: '2px solid #f2f2f2',
                borderBottom: 'none',
-               border: '1px solid #f2f2f2',
                // borderRadius: 5,
                backgroundColor: '#fff',
                width: projectWidth,
@@ -51,6 +50,7 @@ export default class Article extends React.Component {
                cursor: 'pointer',
                position: 'relative',
                paddingBottom: 30,
+               border: '2px solid #e5e5e5',
             }}
             onMouseEnter={() => this.setState({ hover: true })}
             onMouseLeave={() => this.setState({ hover: false })}

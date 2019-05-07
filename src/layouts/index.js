@@ -207,7 +207,10 @@ export default class Layout extends React.Component {
                              position: 'fixed',
                              top: 0,
                              left: sidebarWidth,
-                             width: 'auto',
+                             width:
+                                location.pathname === '/about'
+                                   ? '100%'
+                                   : 'auto',
                              backgroundColor: '#f2f2f2',
                           }
                         : {

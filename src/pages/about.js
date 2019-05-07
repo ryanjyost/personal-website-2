@@ -53,7 +53,6 @@ export default class ResumePage extends React.Component {
                      // overflow: 'scroll',
                      marginTop: isMobile ? 70 : style.top,
                      // position: 'relative',
-                     // width: width,
                   }}
                >
                   {/*<div style={{ maxWidth: 600 }}>*/}
@@ -73,7 +72,7 @@ export default class ResumePage extends React.Component {
                   <div
                      style={{
                         display: 'flex',
-                        justifyContent: 'center',
+                        justifyContent: 'flex-start',
                         height: 50,
                      }}
                      // onMouseEnter={() => this.setState({ hover: true })}
@@ -113,7 +112,7 @@ export default class ResumePage extends React.Component {
                         style={{
                            display: 'flex',
                            alignItems: 'stretch',
-                           justifyContent: 'center',
+                           justifyContent: 'flex-start',
                            marginBottom: 20,
                         }}
                      >
@@ -255,7 +254,7 @@ export default class ResumePage extends React.Component {
                         style={{
                            display: 'flex',
                            alignItems: 'stretch',
-                           justifyContent: 'center',
+                           justifyContent: 'flex-start',
                            marginBottom: 20,
                         }}
                      >
@@ -396,7 +395,7 @@ export default class ResumePage extends React.Component {
                         style={{
                            display: 'flex',
                            alignItems: 'stretch',
-                           justifyContent: 'center',
+                           justifyContent: 'flex-start',
                            marginBottom: 20,
                         }}
                      >

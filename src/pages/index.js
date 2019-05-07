@@ -28,6 +28,7 @@ const IndexPage = ({ data, showSidebar, height, width, isMobile, images }) => {
       {
          text: 'Resume',
          icon: 'fas fa-cloud-download-alt',
+         download: 'ryanjyost_resume.pdf',
       },
    ];
 
